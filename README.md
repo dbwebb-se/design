@@ -39,5 +39,5 @@ v0.0.0x (2015-10-01)
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015 - 2016 Mikael Roos, me@mikaelroos.se   
 ```                                                            
