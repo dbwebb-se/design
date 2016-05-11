@@ -28,6 +28,12 @@ addons:
 
 
 
+matrix:
+    allow_failures:
+        - php: nightly
+
+
+
 before_script:
 
     # Store all files in your own bin
@@ -43,7 +49,7 @@ before_script:
     - install --mode 0755 phpcs.phar $PWD/bin/phpcs
 
     # Install phpmd
-    - wget -c http://static.phpmd.org/php/latest/phpmd.phar
+    - wget --no-check-certificate -c http://static.phpmd.org/php/latest/phpmd.phar
     - install --mode 0755 phpmd.phar $PWD/bin/phpmd
     
     # Download dbwebb-validate
@@ -86,7 +92,7 @@ notifications:
 
     webhooks:
         urls:
-            - https://webhooks.gitter.im/e/1da19be791078d3b7fff
+            - https://webhooks.gitter.im/e/472370d6acaf0e4a12b0
 
         # options: [always|never|change] default: always
         on_success: change

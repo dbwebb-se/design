@@ -2,6 +2,7 @@ Web design and usability for the programmer (design)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/design](https://badges.gitter.im/mosbth/design.svg)](https://gitter.im/mosbth/design?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/mosbth/design.svg?branch=master)](https://travis-ci.org/mosbth/design)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
@@ -23,7 +24,7 @@ This is a co-effort of several people using freely available documentation and t
 
 For contributors, see the commit history and the issues.
 
-Feel free to help builing up the repository with more content suited for training and education.
+Feel free to help building up the repository with more content suited for training and education.
 
 
 
@@ -32,7 +33,7 @@ History
 
 v0.0.0x (2015-10-01)
 
-* Started work in october 2015, planned release autumn 2016.
+* Started work in October 2015, planned release autumn 2016.
 
 
 
