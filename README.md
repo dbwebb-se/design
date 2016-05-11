@@ -1,6 +1,8 @@
 Web design and usability for the programmer (design)
 ===================
 
+[![Join the chat at https://gitter.im/mosbth/design](https://badges.gitter.im/mosbth/design.svg)](https://gitter.im/mosbth/design?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
 Relased as part of a University course presented at:
