@@ -2,7 +2,8 @@ Web design and usability for the programmer (design)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/design](https://badges.gitter.im/mosbth/design.svg)](https://gitter.im/mosbth/design?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/mosbth/design.svg?branch=master)](https://travis-ci.org/mosbth/design)
+[![Build Status](https://travis-ci.org/dbwebb-se/design.svg?branch=master)](https://travis-ci.org/dbwebb-se/design)
+[![CircleCI](https://circleci.com/gh/dbwebb-se/design.svg?style=svg)](https://circleci.com/gh/dbwebb-se/design)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 

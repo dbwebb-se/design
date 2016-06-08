@@ -1,0 +1,81 @@
+# --------------------------------------------------------------------------
+#
+# Init
+#
+dbwebb init-me
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom01
+#
+
+#
+# me http://dbwebb.se/kunskap/skapa-en-webbsida-med-html-css-och-php
+#
+# changed mkdir to install -d to support re-running tests
+cd me/kmom01 && install -d me/img me/css me/incl
+cd me/kmom01 && touch me/me.php me/about.php me/report.php me/css/style.css
+cd me/kmom01 && touch me/incl/header.php me/incl/footer.php me/incl/byline.php
+cd me/kmom01 && wget -O me/img/me-small.jpg http://dbwebb.se/img/mikael-roos/me-happy.jpg
+cd me/kmom01 && wget -O me/img/me.jpg http://dbwebb.se/img/mikael-roos/me-2.jpg
+cd me/kmom01 && wget -O me/img/favicon.ico http://dbwebb.se/favicon.ico
+cd me/kmom01 && wget -O me/img/logo.jpg http://dbwebb.se/image/tema/trad/4.jpg?w=200
+
+
+
+#
+# me1 http://dbwebb.se/uppgift/skapa-en-me-sida-i-kursen-htmlphp
+#
+cd me/kmom01 && rsync -a me/ me1/
+cd me/kmom01 && rm -rf me
+
+# remove style.css to avoid csslint warning for empty file
+cd me/kmom01 && rm me1/css/style.css
+
+dbwebb validate me1
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom02
+#
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom03
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom04
+#
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom05
+#
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom06
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom10
+#
