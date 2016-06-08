@@ -15,6 +15,7 @@ ACTION			= $(TARGET_COLOR)-->
 BIN 		= bin
 VENDORBIN 	= vendor/bin
 NPMBIN		= node_modules/.bin
+PATH		:= $(BIN):$(VENDORBIN):$(NPMBIN):$(PATH)
 
 
 
@@ -79,7 +80,7 @@ dbwebb-install: build-prepare
 .PHONY: dbwebb-testrepo
 dbwebb-testrepo: dbwebb-install
 	@echo "$(ACTION)Test course repo$(NO_COLOR)"
-	$(BIN)/dbwebb --silent --local testrepo
+	PATH=$(PATH); $(BIN)/dbwebb --silent --local testrepo
 
 
 
