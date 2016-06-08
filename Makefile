@@ -97,7 +97,7 @@ dbwebb-validate-install: build-prepare
 .PHONY: dbwebb-validate-check
 dbwebb-validate-check:
 	@echo "$(ACTION)Check version and environment for dbwebb-validate$(NO_COLOR)"
-	$(BIN)/dbwebb-validate --version && dbwebb-validate --check
+	$(BIN)/dbwebb-validate --version && $(BIN)/dbwebb-validate --check
 
 
 
