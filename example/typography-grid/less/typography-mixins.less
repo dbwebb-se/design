@@ -1,0 +1,13 @@
+/**
+ * Typographic mixins.
+ */
+.font(@fontSize: 100.01%, @fontFamily: @fontFamilyBody) {
+    font: @fontSize/@lineHeight @fontFamily;
+}
+
+.fontSize(@fontSize) {
+    font-size: @fontSize;
+    line-height: @lineHeight / unit(@fontSize) * ceil(unit(@fontSize) / @lineHeight);
+}
+
+// 5/4 for smaller font-size, incremental leading.

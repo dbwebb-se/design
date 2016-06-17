@@ -1,0 +1,37 @@
+<!doctype html>
+<title>Demo of gridsystem</title>
+<meta charset="utf-8">
+<script src="js/generateGrid.js"></script>
+
+<div class="wrap">
+    <form id="grid" onsubmit="generateGrid(); return false;">
+        <p>
+            <label>Number of columns:<br>
+            <input type="number" value="12"></label>
+        </p>
+        
+        <p>
+            <label>Column width:<br>
+            <input type="number" value="60"></label>
+        </p>
+
+        <p>
+            <label>Gutter width:<br>
+            <input type="number" value="20"></label>
+        </p>
+
+        <p>
+            <label>Grid width type:<br>
+                <input type="text" value="px" placeholder="px or %"><br>
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Generate grid style">
+        </p>
+
+        <p>
+            <output id="output"></output>
+        </p>
+    </form>
+</div>

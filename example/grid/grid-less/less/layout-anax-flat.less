@@ -1,0 +1,67 @@
+@import "grid.less";
+
+@totalWidth: 100%;           // Fluid layout
+
+.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.row {
+    .row();
+}
+
+.header,
+.flash,
+.footer {
+    .column(12);
+}
+
+.main {
+    .column(9);
+}
+
+.sidebar {
+    .column(3);
+}
+
+.triptych {
+    .column(4);
+}
+
+.info {
+    .column(3);
+}
+
+// Make it responsive using media queries
+@media (max-width: 1150px) {
+    .pull-left,
+    .pull-right {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .inner-wrap {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    .info {
+        .column(6);
+    }
+}
+
+@media (max-width: 700px) {
+    .main,
+    .triptych {
+        .column(12);
+    }
+
+    .sidebar,
+    .info {
+        display: none;
+    }
+}

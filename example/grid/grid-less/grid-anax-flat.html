@@ -1,0 +1,99 @@
+<!doctype html>
+<title>Demo of gridsystem</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet/less" type="text/css" href="less/layout-anax-flat.less">
+
+<script>
+less = {
+    env: "development"
+};
+</script>
+<script src="../../js/less.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+}
+
+.wrap {
+    margin-bottom: 40px;
+    background-color: #ccffdd;
+}
+
+.row {
+    margin-bottom: 10px;
+    background-color: #66ff99;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+
+    background-color: #666;
+    color: #fff;
+}
+</style>
+
+<div class="wrap">
+    
+    <h2>Layout like Anax Flat, responsive, centered with max width</h2>
+
+    <div class="outer-wrap outer-wrap-header">
+        <div class="inner-wrap inner-wrap-header">
+            <div class="row">
+                <div class="header"><span>header</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-flash">
+        <div class="inner-wrap inner-wrap-flash">
+            <div class="row">
+                <div class="flash"><span>flash</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-info">
+        <div class="inner-wrap inner-wrap-info">
+            <div class="row">
+                <div class="info info-1"><span>info 1</span></div>
+                <div class="info info-2"><span>info 2</span></div>
+                <div class="info info-3"><span>info 3</span></div>
+                <div class="info info-4"><span>info 4</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-main">
+        <div class="inner-wrap inner-wrap-main">
+            <div class="row">
+                <div class="main"><span>main</span></div>
+                <div class="sidebar"><span>sidebar</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-triptych">
+        <div class="inner-wrap inner-wrap-triptych">
+            <div class="row">
+                <div class="triptych triptych-1"><span>triptych 1</span></div>
+                <div class="triptych triptych-2"><span>triptych 2</span></div>
+                <div class="triptych triptych-3"><span>triptych 3</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-footer">
+        <div class="inner-wrap inner-wrap-footer">
+            <div class="row">
+                <div class="footer"><span>footer</span></div>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- wrap -->

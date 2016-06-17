@@ -1,0 +1,119 @@
+@import "grid.less";
+
+@totalWidth: 100%;           // Fluid layout
+
+.wrap {
+    .container();
+    max-width: 960px;
+}
+
+.row {
+    .row();
+}
+
+.header,
+.flash,
+.footer {
+    .column(12);
+}
+
+.main {
+    .column(9);
+}
+
+.sidebar {
+    .column(3);
+}
+
+.triptych {
+    .column(4);
+}
+
+.info {
+    .column(3);
+}
+
+// Pushed columns
+.pushit {
+    .column(3);
+    .push(3);
+}
+
+// Pull outside grid
+.pull-left {
+    .column(2);
+    .pull(2);
+}
+
+.pull-right {
+    .column(2);
+    .pull-right(2);
+}
+
+.full-width {
+    .column(12);
+}
+
+// Swap places using pull and push
+.column-a {
+    .column(6);
+    order: 2;
+}
+.column-b {
+    .column(3);
+    order: 3;
+}
+.column-c {
+    .column(3);
+    order: 1;
+}
+
+// Nested columns
+.col-nested {
+    .column(8);
+}
+
+.row-nested {
+    .row(8);
+}
+
+.block {
+    .column(4, 8);
+}
+
+.col {
+    .column(4);
+}
+
+// Make it responsive using media queries
+@media (max-width: 1150px) {
+    .pull-left,
+    .pull-right {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .wrap {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    .info {
+        .column(6);
+    }
+}
+
+@media (max-width: 700px) {
+    .main,
+    .triptych {
+        .column(12);
+    }
+
+    .sidebar,
+    .info {
+        display: none;
+    }
+}

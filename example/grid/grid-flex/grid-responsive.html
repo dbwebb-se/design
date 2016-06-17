@@ -1,0 +1,129 @@
+<!doctype html>
+<title>Demo of gridsystem</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet/less" type="text/css" href="less/layout-responsive.less">
+
+<script>
+less = {
+    env: "development"
+};
+</script>
+<script src="../../js/less.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+}
+
+.wrap {
+    margin-bottom: 40px;
+    background-color: #ccffdd;
+}
+
+.row {
+    margin-bottom: 10px;
+    background-color: #66ff99;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+
+    background-color: #666;
+    color: #fff;
+}
+</style>
+
+<div class="wrap">
+    <h2>Layout your website using Flex grid</h2>
+
+    <div class="row">
+        <div class="header"><span>header</span></div>
+    </div>
+
+    <div class="row">
+        <div class="flash"><span>flash</span></div>
+    </div>
+
+    <div class="row">
+        <div class="info info-1"><span>info 1</span></div>
+        <div class="info info-2"><span>info 2</span></div>
+        <div class="info info-3"><span>info 3</span></div>
+        <div class="info info-4"><span>info 4</span></div>
+    </div>
+
+    <div class="row">
+        <div class="main"><span>main</span></div>
+        <div class="sidebar"><span>sidebar</span></div>
+    </div>
+
+    <div class="row">
+        <div class="triptych triptych-1"><span>triptych 1</span></div>
+        <div class="triptych triptych-2"><span>triptych 2</span></div>
+        <div class="triptych triptych-3"><span>triptych 3</span></div>
+    </div>
+
+    <div class="row">
+        <div class="footer"><span>footer</span></div>
+    </div>
+</div>
+
+
+
+<div class="wrap">
+    <h2>Push</h2>
+
+    <div class="row">
+        <div class="pushit"><span>pushed</span></div>
+        <div class="pushit"><span>pushed</span></div>
+    </div>
+</div>
+
+
+
+<div class="wrap">
+    <h2>Pull(-left) and pull-right, outside grid</h2>
+
+    <div class="row">
+        <div class="pull-left"><span>pull(-left)</span></div>
+        <div class="full-width"><span>full width</span></div>
+        <div class="pull-right"><span>pull-right</span></div>
+    </div>
+</div>
+
+
+
+<div class="wrap">
+    <h2>Push and pull to change order</h2>
+
+    <div class="row">
+        <div class="column-a"><span>Col A</span></div>
+        <div class="column-b"><span>Col B</span></div>
+        <div class="column-c"><span>Col C</span></div>
+    </div>
+</div>
+
+
+
+<div class="wrap">
+    <h2>Nested columns</h2>
+
+    <div class="row">
+        <div class="col"><span>column</span></div>
+        <div class="col"><span>column</span></div>
+        <div class="col"><span>column</span></div>
+        <div class="col-nested">
+            <div class="row-nested">
+                <div class="block"><span>nested block</span></div>
+                <div class="block"><span>nested block</span></div>
+                <div class="block"><span>nested block</span></div>
+                <div class="block"><span>nested block</span></div>
+            </div>
+        </div>
+        <div class="col"><span>column</span></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+@import "../../grid/grid-fluid/less/grid-flex.less";
+
+.wrap {
+    .container();
+    max-width: 1300px;
+}
+
+.row {
+    .row();
+}
+
+.column,
+.column-a,
+.column-b {
+    .column(6);
+}
+
+
+
+// Make it responsive using media queries
+@media (max-width: 1200px) {
+    .wrap {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}

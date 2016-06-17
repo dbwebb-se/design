@@ -1,0 +1,86 @@
+@import "grid.less";
+
+@totalWidth: 100%;           // Fluid layout
+
+.wrap {
+    .container();
+    max-width: 960px;
+}
+
+.row {
+    .row();
+}
+
+.header,
+.flash,
+.footer {
+    .column(12);
+}
+
+.main {
+    .column(9);
+}
+
+.sidebar {
+    .column(3);
+}
+
+.triptych {
+    .column(4);
+}
+
+.info {
+    .column(3);
+}
+
+// Pushed columns
+.pushit {
+    .column(3);
+    .push(3);
+}
+
+// Pull outside grid
+.pull-left {
+    .column(2);
+    .pull(2);
+}
+
+.pull-right {
+    .column(2);
+    .pull-right(2);
+}
+
+.full-width {
+    .column(12);
+}
+
+// Swap places using pull and push
+.column-a {
+    .column(6);
+    .push(3)
+}
+.column-b {
+    .column(3);
+    .pull(9);
+}
+.column-c {
+    .column(3);
+}
+
+
+// Nested columns
+.col-nested {
+    .column(8);
+}
+
+.row-nested {
+    .row(8);
+}
+
+.block {
+    .column(4, 8);
+}
+
+.col {
+    .column(4);
+}

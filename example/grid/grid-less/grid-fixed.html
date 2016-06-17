@@ -1,0 +1,72 @@
+<!doctype html>
+<title>Demo of gridsystem</title>
+<meta charset="utf-8">
+
+<link rel="stylesheet/less" type="text/css" href="less/layout-fixed.less">
+
+<script>
+less = {
+    env: "development"
+};
+</script>
+<script src="../../js/less.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+}
+
+.wrap {
+    margin-bottom: 40px;
+    background-color: #ccffdd;
+}
+
+.row {
+    margin-bottom: 10px;
+    background-color: #66ff99;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+
+    background-color: #666;
+    color: #fff;
+}
+</style>
+
+<div class="wrap">
+    <h2>Layout your website using grid</h2>
+
+    <div class="row">
+        <div class="header"><span>header</span></div>
+    </div>
+
+    <div class="row">
+        <div class="flash"><span>flash</span></div>
+    </div>
+
+    <div class="row">
+        <div class="info info-1"><span>info 1</span></div>
+        <div class="info info-2"><span>info 2</span></div>
+        <div class="info info-3"><span>info 3</span></div>
+        <div class="info info-4"><span>info 4</span></div>
+    </div>
+
+    <div class="row">
+        <div class="main"><span>main</span></div>
+        <div class="sidebar"><span>sidebar</span></div>
+    </div>
+
+    <div class="row">
+        <div class="triptych triptych-1"><span>triptych 1</span></div>
+        <div class="triptych triptych-2"><span>triptych 2</span></div>
+        <div class="triptych triptych-3"><span>triptych 3</span></div>
+    </div>
+
+    <div class="row">
+        <div class="footer"><span>footer</span></div>
+    </div>
+</div>
