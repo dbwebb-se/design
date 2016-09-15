@@ -12,8 +12,52 @@ dbwebb init-me
 #
 
 #
-# me http://dbwebb.se/kunskap/skapa-en-webbsida-med-html-css-och-php
+# anax-flat
+# https://dbwebb.se/kunskap/bygg-me-sida-med-anax-flat
 #
+cd me/anax-flat && composer require mos/anax-flat michelf/php-smartypants 1.6.x-dev
+cd me/anax-flat && cp vendor/mos/anax-flat/Makefile .
+cd me/anax-flat && make site-build
+
+cd me/anax-flat && git init
+cp example/setup/01/anax-flat/.gitignore me/anax-flat/.gitignore
+cd me/anax-flat && git add .
+cd me/anax-flat && git commit -m "First commit"
+
+cd me/anax-flat && cp vendor/mos/anax-flat/{LICENSE,README.md,REVISION.md} .
+cd me/anax-flat && git add LICENSE README.md REVISION.md
+cd me/anax-flat && git commit -a -m "Prepare to tag version"
+cd me/anax-flat && git tag -a 1.0.0 -m "My first version"
+
+
+
+#
+# anax-flat/theme
+# https://dbwebb.se/kunskap/bygg-ett-tema-till-anax-flat
+#
+cd me/anax-flat && git clone https://github.com/canax/anax-flat-theme.git theme
+cd me/anax-flat/theme && make npm-install
+cd me/anax-flat/theme && make npm-update
+
+cd me/anax-flat/theme && make less
+cd me/anax-flat/theme && make less-install
+
+cp example/setup/01/anax-flat/config/theme.php me/anax-flat/config/
+
+cd me/anax-flat/theme && wget https://necolas.github.io/normalize.css/latest/normalize.css -O modules/normalize.less
+cp example/setup/01/anax-flat/Makefile me/anax-flat/
+
+cp example/anax-flat/theme/regions.less me/anax-flat/theme/modules
+
+cd me/anax-flat/theme && git clone https://github.com/mosbth/responsive-menu.git
+
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/responsive-menu.less -O modules/responsive-menu.less
+
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/responsive-menu.js -O js/responsive-menu.js
+
+cd me/anax-flat/theme && git add .
+cd me/anax-flat/theme && git commit -a -m "Added LESS modules"
+cd me/anax-flat/theme && git tag -a 1.0.0 -m "First version"
 
 
 

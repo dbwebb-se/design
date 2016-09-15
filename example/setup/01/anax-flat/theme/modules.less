@@ -1,0 +1,19 @@
+/** 
+ * Base theme including all modules needed.
+ *
+ * Each module is within its own
+ * modules/some-module.less file and is imported by this file.
+ * Each module.less can be copied to ./some-module.less and will then
+ * be override modules/some-module.less. This is useful when several themes
+ * the same modules.
+ */
+//@import url(some-module.less);
+
+// Reset, or normalize the browser style
+@import url(normalize.less);
+
+// Basic region structure
+@import url(regions.less);
+
+// Responsive menu
+@import url(responsive-menu.less);
