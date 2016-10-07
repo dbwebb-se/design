@@ -1,33 +1,30 @@
-/slide/
-/tutorial/
-/literature/
-/.solution/
-/.solutions/
-/.default/
-/bin
-/build
-/node_modules/
-/vendor/
-/circle.yml
-/package.json
-/composer.json
-/composer.lock
-/Makefile
-/LICENSE
-/README.md
-/.travis.yml
-/.dbwebb.exclude
-/.dbwebb.include
-/.dbwebb.tests
-/.dbwebb.version
-/.git/
-/.gitmodules/
-/.gitignore
+slide/
+tutorial/
+literature/
+.solution/
+.solutions/
+.default/
+bin/
+build/
+**/node_modules/
+**/vendor/**/.git/
+**/vendor/**/.gitmodules/
+**/vendor/**/.gitignore
+circle.yml
+package.json
+LICENSE
+README.md
+.travis.yml
+.dbwebb.exclude
+.dbwebb.include
+.dbwebb.tests
+.dbwebb.version
 
-# Limit vendor uploads
-vendor/**/.git/
-vendor/**/.gitmodules/
-vendor/**/.gitignore
+#.git/
+#.gitmodules/
+#.gitignore
+
+docs/api
 
 # Anywhere ignore this
 old/
@@ -37,7 +34,7 @@ npm-debug.log
 .DS_Store
 
 # webapp
-/me/**/platforms/
+platforms/
 
 # phpmvc
-/me/**/coverage/
+coverage/
