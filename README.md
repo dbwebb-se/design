@@ -32,8 +32,9 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
-v0.0.0x (2015-10-01)
+v0.1.0 (2016-10-07)
 
+* Tested with kmom01.
 * Started work in October 2015, planned release autumn 2016.
 
 

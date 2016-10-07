@@ -51,9 +51,9 @@ cp example/anax-flat/theme/regions.less me/anax-flat/theme/modules
 
 cd me/anax-flat/theme && git clone https://github.com/mosbth/responsive-menu.git
 
-cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/responsive-menu.less -O modules/responsive-menu.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/less/responsive-menu.less -O modules/responsive-menu.less
 
-cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/responsive-menu.js -O js/responsive-menu.js
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/js/responsive-menu.js -O js/responsive-menu.js
 
 cd me/anax-flat/theme && git add .
 cd me/anax-flat/theme && git commit -a -m "Added LESS modules"
