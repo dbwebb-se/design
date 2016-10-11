@@ -32,6 +32,11 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
+v0.1.* (2016-10-11)
+
+* Adding example on installing php-yaml `example/php-yaml`.
+
+
 v0.1.0 (2016-10-07)
 
 * Tested with kmom01.
