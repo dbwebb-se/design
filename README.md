@@ -32,9 +32,10 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
-v0.1.* (2016-10-11)
+v0.1.1 (2016-10-14)
 
 * Adding example on installing php-yaml `example/php-yaml`.
+* Adding example on Makefile in `example/make`.
 
 
 v0.1.0 (2016-10-07)
