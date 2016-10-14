@@ -83,7 +83,7 @@ cd me/anax-flat/theme && make test
 #
 # Ready
 #
-cd me && rsync -av --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom01/ && ln -sf ../anax-flat/vendor kmom01/
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom01/ && ln -sf ../anax-flat/vendor kmom01/
 
 
 
@@ -145,7 +145,7 @@ cd me/anax-flat && git tag -a 2.0.0 -m "Second version"
 #
 # Ready
 #
-cd me && rsync -av --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom02/ && ln -sf ../anax-flat/vendor kmom02/
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom02/ && ln -sf ../anax-flat/vendor kmom02/
 
 
 
