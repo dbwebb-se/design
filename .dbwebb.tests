@@ -12,10 +12,17 @@ dbwebb init-me
 #
 
 #
+# lab environment
+#
+make -f example/make/Makefile
+
+
+
+#
 # anax-flat
 # https://dbwebb.se/kunskap/bygg-me-sida-med-anax-flat
 #
-cd me/anax-flat && composer require mos/anax-flat michelf/php-smartypants 1.6.x-dev
+cd me/anax-flat && composer require mos/anax-flat
 cd me/anax-flat && cp vendor/mos/anax-flat/Makefile .
 cd me/anax-flat && make site-build
 
