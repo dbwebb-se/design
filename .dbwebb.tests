@@ -78,6 +78,22 @@ cd me/anax-flat/theme && git tag -a 1.0.0 -m "First version"
 #
 
 
+#
+# https://dbwebb.se/uppgift/me-sida-med-grid#vertikalt
+# Del 1
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-flex.less -O modules/grid-flex.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-float.less -O modules/grid-float.less
+touch me/anax-flat/theme/modules/layout.less
+touch me/anax-flat/theme/modules/grid-helpers.less
+touch me/anax-flat/content/grid.md
+
+
+
+#
+# https://dbwebb.se/uppgift/me-sida-med-grid#horisontellt
+# Del 2
+
+
 
 
 # --------------------------------------------------------------------------
