@@ -100,8 +100,7 @@ dbwebb-install: build-prepare
 .PHONY: dbwebb-testrepo
 dbwebb-testrepo: dbwebb-install
 	@echo $(call HELPTEXT,$@)
-	#export PATH=$(PATH) && dbwebb --silent --local testrepo
-	export PATH=$(PATH) && dbwebb --local testrepo
+	export PATH=$(PATH) && dbwebb --silent --local testrepo
 
 
 
