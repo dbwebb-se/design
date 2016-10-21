@@ -1,0 +1,23 @@
+// Lets import the theme we want to further customize
+@import url(base.less);
+
+// Here comes the customized theme
+@h1BottomBorderSize:    1px;
+@h1BottomBorderStyle:   solid;
+@h1BottomBorderColor:   black;
+
+@fontFamily: monospace;
+
+@bgColor:   opaque;
+@color:     #333;
+
+html.custom {
+    background-color: @bgColor;
+    color: @color;
+
+    font-family: @fontFamily;
+
+    h1 {
+        border-bottom: @h1BottomBorderSize @h1BottomBorderStyle @h1BottomBorderColor;
+    }
+}
