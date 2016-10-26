@@ -32,6 +32,11 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
+v0.1.4 (2016-10-26)
+
+* Updated clearfix in less grid examples.
+
+
 v0.1.3 (2016-10-21)
 
 * Published kmom03.
