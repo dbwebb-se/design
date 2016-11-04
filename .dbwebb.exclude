@@ -1,30 +1,32 @@
-slide/
-tutorial/
-literature/
-.solution/
-.solutions/
-.default/
-bin/
-build/
+# Only top level
+/slide/
+/tutorial/
+/literature/
+/.solution/
+/.solutions/
+/.default/
+/bin/
+/circle.yml
+/package.json
+/LICENSE
+/README.md
+/.travis.yml
+/.dbwebb.exclude
+/.dbwebb.include
+/.dbwebb.tests
+/.dbwebb.version
+
+# Any level
 **/node_modules/
 **/vendor/**/.git/
 **/vendor/**/.gitmodules/
 **/vendor/**/.gitignore
-circle.yml
-package.json
-LICENSE
-README.md
-.travis.yml
-.dbwebb.exclude
-.dbwebb.include
-.dbwebb.tests
-.dbwebb.version
+build/
+docs/api
 
 #.git/
 #.gitmodules/
 #.gitignore
-
-docs/api
 
 # Anywhere ignore this
 old/
