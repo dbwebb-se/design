@@ -1,0 +1,131 @@
+#
+# Inspect, tools to inspect a kmom.
+#
+# Usage: dbwebb inspect kmom01
+#
+# Sequence executed:
+# design(), designkmom01(), designlast()
+#
+
+
+
+#
+# Test design general, always executed first
+#
+design()
+{
+    inspectIntro
+}
+
+
+
+#
+# Test general, always executed last in sequence
+#
+designlast()
+{
+    inspectMe "me/anax/htdocs" "" "" "" "anax-flat"
+}
+
+
+
+#
+# Check details on the repo
+#
+function designrepo()
+{
+    local repo="$1"
+    local target="me/$repo"
+    
+    headerForTest "-- Repo $repo" "-- ${DBW_WWW}$DBW_COURSE/$target" 
+    printUrl "" "$target"  
+
+    isGitRepo "$target"
+    hasGitTagBetween "$EXEC_DIR/$repo" "$2" "$3" > /dev/null
+
+    inspectCommand "" "$EXEC_DIR/$repo" "git remote -v" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git tag" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git status" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git log -n 20 --pretty=format:\"%h_%ad_:_%s%d_[%an]\" --graph --date=short" ""
+    #inspectCommand "" "$EXEC_DIR/$repo" "git stash" ""
+    #inspectCommand "" "$EXEC_DIR/$repo" "git checkout -b inspect $tag" ""
+
+    # All repos does not include make test
+    # Make test need test environment
+    #inspectCommand "Makefile" "$EXEC_DIR/$repo" "make install test" ""
+}
+
+
+
+#
+# Test design kmom01
+#
+designkmom01()
+{
+    designrepo "anax-flat" "1.0.0" "2.0.0"
+}
+
+
+
+#
+# Test design kmom02
+#
+designkmom02()
+{
+    designrepo "anax-flat" "2.0.0" "3.0.0"
+    designRepo "anax-flat/theme" "2.0.0" "3.0.0"
+}
+
+
+
+#
+# Test design kmom03
+#
+designkmom03()
+{
+    designrepo "anax-flat" "3.0.0" "4.0.0"
+    designRepo "anax-flat/theme" "3.0.0" "4.0.0"
+}
+
+
+
+#
+# Test design kmom04
+#
+designkmom04()
+{
+    designrepo "anax-flat" "4.0.0" "5.0.0"
+    designRepo "anax-flat/theme" "4.0.0" "5.0.0"
+}
+
+
+#
+# Test design kmom05
+#
+designkmom05()
+{
+    designrepo "anax-flat" "5.0.0" "6.0.0"
+    designRepo "anax-flat/theme" "5.0.0" "6.0.0"
+}
+
+
+
+#
+# Test design kmom06
+#
+designkmom06()
+{
+    designrepo "anax-flat" "6.0.0" "7.0.0"
+    designRepo "anax-flat/theme" "6.0.0" "7.0.0"
+}
+
+
+
+#
+# Test design kmom10
+#
+designkmom10()
+{
+    designrepo "anax-flat" "10.0.0" "11.0.0"
+    designRepo "anax-flat/theme" "10.0.0" "11.0.0"
+}

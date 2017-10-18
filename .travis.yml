@@ -1,12 +1,18 @@
 language: php
 
 php:
-    #- 5.4
-    #- 5.5
-    - 5.6
-    #- hhvm
-    #- nightly
-    #- "7.0"
+   - 5.6
+   - "7.0"
+   - "7.1"
+   - hhvm
+   - nightly
+
+
+
+matrix:
+    allow_failures:
+        - php: nightly
+        - php: hhvm
 
 
 
@@ -28,24 +34,15 @@ addons:
 
 
 
-matrix:
-    allow_failures:
-        - php: nightly
-
-
-
 before_script:
     # Prepare for automated tests
-    - make automated-tests-prepare
+    - make install
 
 
 
 script:
-    # Check version and environment
-    - make automated-tests-check
-
     # Run tests
-    - make automated-tests-run
+    - make test
 
 
 
