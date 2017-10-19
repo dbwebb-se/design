@@ -41,6 +41,28 @@ cd me/anax-flat && git tag -a 1.0.0 -m "My first version"
 
 
 #
+# Make test
+#
+#cd me/anax-flat && make test # Missing test & needs flexible style.less in less-lint
+
+
+
+#
+# Ready
+#
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom01/ && ln -sf ../anax-flat/vendor kmom01/
+dbwebb validate kmom01
+make dbwebb-inspect options="--yes --no-validate" what=kmom01
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom02
+#
+
+
+#
 # anax-flat/theme
 # https://dbwebb.se/kunskap/bygg-ett-tema-till-anax-flat
 #
@@ -68,7 +90,7 @@ cd me/anax-flat/theme && git add .
 cd me/anax-flat/theme && git config user.email "mos@dbwebb.se"
 cd me/anax-flat/theme && git config user.name "Mikael Roos"
 cd me/anax-flat/theme && git commit -a -m "Added LESS modules"
-cd me/anax-flat/theme && git tag -a 1.0.0 -m "First version"
+cd me/anax-flat/theme && git tag -a 2.0.0 -m "First version"
 
 
 
@@ -81,18 +103,30 @@ cd me/anax-flat/theme && make test
 
 
 #
+# Tag it
+#
+# Already tagged above.
+#cd me/anax-flat/theme && git add .
+#cd me/anax-flat/theme && git commit -a -m "Prepare for kmom02"
+#cd me/anax-flat/theme && git tag -a 2.0.1 -m "Second version"
+
+cd me/anax-flat && git add .
+cd me/anax-flat && git commit -a -m "Prepare for kmom02"
+cd me/anax-flat && git tag -a 2.0.0 -m "Second version"
+
+
+
+#
 # Ready
 #
-cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom01/ && ln -sf ../anax-flat/vendor kmom01/
-
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom02/ && ln -sf ../anax-flat/vendor kmom02/
+#dbwebb validate kmom02
 
 
 
 # --------------------------------------------------------------------------
 #
-# Kmom02
-#
-
+# Kmom03
 
 #
 # https://dbwebb.se/uppgift/me-sida-med-grid#vertikalt
@@ -121,6 +155,7 @@ touch me/anax-flat/theme/modules/typography.less
 touch me/anax-flat/content/typography.md
 
 
+
 #
 # Make test
 #
@@ -133,25 +168,19 @@ cd me/anax-flat/theme && make test
 # Tag it
 #
 cd me/anax-flat/theme && git add .
-cd me/anax-flat/theme && git commit -a -m "Prepare for kmom02"
-cd me/anax-flat/theme && git tag -a 2.0.0 -m "Second version"
+cd me/anax-flat/theme && git commit -a -m "Prepare for kmom03"
+cd me/anax-flat/theme && git tag -a 3.0.0 -m "Third version"
 
 cd me/anax-flat && git add .
-cd me/anax-flat && git commit -a -m "Prepare for kmom02"
-cd me/anax-flat && git tag -a 2.0.0 -m "Second version"
+cd me/anax-flat && git commit -a -m "Prepare for kmom03"
+cd me/anax-flat && git tag -a 3.0.0 -m "Third version"
 
 
 
 #
 # Ready
 #
-cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom02/ && ln -sf ../anax-flat/vendor kmom02/
-
-
-
-# --------------------------------------------------------------------------
-#
-# Kmom03
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom03/ && ln -sf ../anax-flat/vendor kmom03/
 
 
 
@@ -189,7 +218,6 @@ cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude bui
 #
 # Inspect
 #
-#make dbwebb-inspect options="--yes --no-validate" what=kmom01
 #make dbwebb-inspect options="--yes --no-validate" what=kmom02
 #make dbwebb-inspect options="--yes --no-validate" what=kmom03
 #make dbwebb-inspect options="--yes --no-validate" what=kmom04

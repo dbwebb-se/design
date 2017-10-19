@@ -2,7 +2,7 @@
  * Generate CSS code for grid.
  */
 
-/* exported generateGrid */
+/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "generateGrid" }] */
 
 /**
  * To generate a CSS grid.
@@ -100,30 +100,3 @@ function generateGrid() {
 
     output.innerHTML = "<pre>" + css + "</pre>";
 }
-
-
-/* jscs:disable maximumLineLength */
-/* eslint-disable max-len */
-/*
-.row(@columns:@columns) {
-    display: block;
-    width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-    margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
-    // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
-    // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
-    .clearfix;
-}
-.column(@x,@columns:@columns) {
-    display: inline;
-    float: left;
-    width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-    margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
-    // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
-    // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
-}
-.push(@offset:1) {
-    margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}
-.pull(@offset:1) {
-    margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}*/

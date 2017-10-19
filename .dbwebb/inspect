@@ -24,7 +24,7 @@ design()
 #
 designlast()
 {
-    inspectMe "me/anax/htdocs" "" "" "" "anax-flat"
+    inspectMe "me/anax-flat/htdocs" "" "" "" "anax-flat"
 }
 
 
