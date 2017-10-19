@@ -150,7 +150,7 @@ publish: dbwebb-publish
 
 
 
-# target: inspect                 - Execute dbwebb inspect what=kmom01.
+# target: inspect                 - Execute dbwebb inspect options="" what=kmom01.
 .PHONY: inspect
 inspect: dbwebb-inspect
 	@$(call HELPTEXT,$@)
