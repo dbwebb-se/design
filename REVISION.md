@@ -2,9 +2,10 @@ Revision history
 ===================
 
 
-v1.0.0* (2017-10-18)
+v1.0.0 (2017-10-18)
 -------------------
 
+* Pass all tests and inspect for kmom01.
 * After upgrade to dbwebb-cli v2.
 
 
