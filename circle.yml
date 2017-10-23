@@ -5,7 +5,16 @@ machine:
 
 
 test:
-    override:
-    #- mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    #- phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
-    - make test
+    pre:
+        - make install
+
+    #override:
+    #    - make test
+
+
+
+notify:
+    webhooks:
+        # A list of hook hashes, containing the url field
+        # gitter hook
+        - url: https://webhooks.gitter.im/e/e930b864787fb506bd71
