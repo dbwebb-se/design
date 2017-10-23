@@ -100,7 +100,7 @@ check: dbwebb-validate-check
 
 # target: test                    - Install test tools & run tests.
 .PHONY: test
-test: check dbwebb-publish-run dbwebb-testrepo
+test: check dbwebb-publish-example dbwebb-testrepo
 	@$(call HELPTEXT,$@)
 
 
@@ -230,35 +230,26 @@ dbwebb-validate-check:
 
 
 
-# target: dbwebb-validate-run     - Run tests on /example with dbwebb-validate.
-.PHONY: dbwebb-validate-run
-dbwebb-validate-run:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) example
-
-
-
-# target: dbwebb-validate         - Execute dbwebb validate what=part-to-validate.
+# target: dbwebb-validate         - Execute dbwebb validate options="" what=part-to-validate.
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(what) $(arg1) $(kmom)
+	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(options) $(what)
 
 
 
-# target: dbwebb-publish-run      - Run tests on /example with dbwebb-publish.
-.PHONY: dbwebb-publish-run
-dbwebb-publish-run:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ example
-
-
-
-# target: dbwebb-publish          - Execute dbwebb publish what=part-to-validate-publish.
+# target: dbwebb-publish          - Execute dbwebb publish options="" what=part-to-validate-publish.
 .PHONY: dbwebb-publish
-dbwebb-publish:
+dbwebb-publish: prepare
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ $(what) $(arg1) $(kmom)
+	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
+
+
+# target: dbwebb-publish-example  - Execute dbwebb publish /example ro build/webroot
+.PHONY: dbwebb-publish-example
+dbwebb-publish-example: prepare
+	@$(call HELPTEXT,$@)
+	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) example
 
 
 
@@ -287,7 +278,7 @@ dbwebb-inspect-check:
 .PHONY: dbwebb-inspect
 dbwebb-inspect:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) $(options) . $(what) $(arg1) $(kmom)
+	env PATH=$(PATH) $(DBWEBB_INSPECT) $(options) . $(what)
 
 
 

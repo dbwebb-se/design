@@ -10,6 +10,7 @@
 -*/cache/*
 -*/docs/*
 -*/lib/*
+-*/old/*
 -*.min.*
 -*.png
 -*.jpg
@@ -17,6 +18,8 @@
 
 -./me/*/vendor/*
 -./me/*/node_modules/*
+
++./build/webroot/*
 
 #-./me/*/platforms/*
 #+./me/*/platforms/browser/www/*.html
