@@ -18,8 +18,10 @@
 /me/
 - /me/anax-lite/.bin
 - /me/anax-lite/cache/cimage/*
+- /me/**/cache/anax/*
+- /me/**/cache/cimage/*
 - vendor/mos/cimage/webroot
-- vendor/**/config
+#- vendor/**/config
 - vendor/**/docs
 - vendor/**/test
 - node_modules/
