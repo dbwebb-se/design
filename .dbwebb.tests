@@ -75,16 +75,18 @@ cd me/anax-flat/theme && make less-install
 
 cp example/setup/01/anax-flat/config/theme.php me/anax-flat/config/
 
-cd me/anax-flat/theme && wget https://necolas.github.io/normalize.css/latest/normalize.css -O modules/normalize.less
+# Get normalizer using npm
+cd me/anax-flat/theme && npm install normalize.css
+cd me/anax-flat/theme && cp node_modules/normalize.css/normalize.css modules/normalize.less
+
 cp example/setup/01/anax-flat/Makefile me/anax-flat/
 
 cp example/anax-flat/theme/regions.less me/anax-flat/theme/modules
 
-cd me/anax-flat/theme && git clone https://github.com/mosbth/responsive-menu.git
-
-cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/less/responsive-menu.less -O modules/responsive-menu.less
-
-cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/js/responsive-menu.js -O js/responsive-menu.js
+# Get responsive menu using npm
+cd me/anax-flat/theme && npm install desinax-responsive-menu --save-dev
+cd me/anax-flat/theme && cp node_modules/desinax-responsive-menu/src/less/responsive-menu.less modules/
+cd me/anax-flat/theme && cp node_modules/desinax-responsive-menu/src/js/responsive-menu.js js/
 
 cd me/anax-flat/theme && git add .
 cd me/anax-flat/theme && git config user.email "mos@dbwebb.se"
