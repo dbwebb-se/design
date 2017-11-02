@@ -16,6 +16,7 @@
 -*.jpg
 -./.venv
 
+-./me/anax-flat/*
 -./me/*/vendor/*
 -./me/*/node_modules/*
 
