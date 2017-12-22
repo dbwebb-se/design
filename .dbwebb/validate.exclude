@@ -17,6 +17,7 @@
 -./.venv
 
 -./me/anax-flat/*
+-./me/proj/*
 -./me/*/vendor/*
 -./me/*/node_modules/*
 
