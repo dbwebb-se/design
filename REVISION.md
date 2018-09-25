@@ -2,10 +2,18 @@ Revision history
 ===================
 
 
+v1.0.2 (2018-09-25)
+-------------------
+
+* Before upgrading to course repo for design v2.
+
+
+
 v1.0.1 (2017-10-30)
 -------------------
 
 * Update validators and removing old validators.
+
 
 
 v1.0.0 (2017-10-18)
@@ -15,11 +23,13 @@ v1.0.0 (2017-10-18)
 * After upgrade to dbwebb-cli v2.
 
 
+
 v0.1.5 (2017-10-18)
 -------------------
 
 * Before upgrade to dbwebb-cli v2.
 * Added `example/figure`.
+
 
 
 v0.1.4 (2016-10-26)
@@ -28,10 +38,12 @@ v0.1.4 (2016-10-26)
 * Updated clearfix in less grid examples.
 
 
+
 v0.1.3 (2016-10-21)
 -------------------
 
 * Published kmom03.
+
 
 
 v0.1.2 (2016-10-15)
@@ -40,11 +52,13 @@ v0.1.2 (2016-10-15)
 * Tested kmom02.
 
 
+
 v0.1.1 (2016-10-14)
 -------------------
 
 * Adding example on installing php-yaml `example/php-yaml`.
 * Adding example on Makefile in `example/make`.
+
 
 
 v0.1.0 (2016-10-07)
