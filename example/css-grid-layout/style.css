@@ -14,8 +14,7 @@
 .header,
 .column-left,
 .column-right,
-.footer
-{
+.footer {
     box-sizing: border-box;
     padding: 1em;
 }
