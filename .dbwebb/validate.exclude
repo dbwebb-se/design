@@ -16,10 +16,11 @@
 -*.jpg
 -./.venv
 
--./me/anax-flat/*
--./me/proj/*
--./me/*/vendor/*
--./me/*/node_modules/*
+-./me/kmom10/*
+
+-./*/redovisa/*
+-./*/*/vendor/*
+-./*/*/node_modules/*
 
 +./build/webroot/*
 

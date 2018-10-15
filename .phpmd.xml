@@ -10,28 +10,30 @@
         Custom rule set for htmlphp course.
     </description>
 
-    <exclude-pattern>imgd.php</exclude-pattern> 
-
     <rule ref="rulesets/cleancode.xml">
         <exclude name="BooleanArgumentFlag" />
         <exclude name="ElseExpression" />
+        <exclude name="StaticAccess" />
     </rule>
-    
+
     <rule ref="rulesets/codesize.xml" />
 
     <rule ref="rulesets/controversial.xml">
         <exclude name="Superglobals" />
     </rule>
 
-    <rule ref="rulesets/design.xml" />
-    
+    <rule ref="rulesets/design.xml">
+        <exclude name="ExitExpression" />
+        <exclude name="DevelopmentCodeFragment" />
+    </rule>
+
     <rule ref="rulesets/naming.xml">
         <exclude name="ShortVariable" />
     </rule>
 
     <rule ref="rulesets/naming.xml/ShortVariable">
         <properties>
-            <property name="exceptions" value="i,j,db,id,di" />
+            <property name="exceptions" value="i,j,db,id" />
         </properties>
     </rule>
 

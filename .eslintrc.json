@@ -21,8 +21,7 @@
             2,
             4,
             {
-              "SwitchCase": 1,
-              "ArrayExpression": "off"
+              "SwitchCase": 1
             }
         ],
         "linebreak-style": [
@@ -36,7 +35,7 @@
             "always"
         ],
         "camelcase": [
-            0,
+            2,
             {
               "properties": "never"
             }
@@ -95,7 +94,7 @@
             "never"
         ],
         "newline-after-var": [
-            0,
+            2,
             "always"
         ],
         "max-len": [
@@ -111,6 +110,6 @@
             "error",
             "any"
         ],
-        "no-console": "off"
+        "no-console": 0
     }
 }

@@ -5,13 +5,13 @@
 #
 
 # General
-me/anax-flat
+me/redovisa
 
 # kmom01
 me/kmom01
 
 # kmom02
-me/kmom02
+me/kmom02/less
 
 # kmom03
 me/kmom03
@@ -26,4 +26,4 @@ me/kmom05
 me/kmom06
 
 # kmom10
-me/proj
+me/kmom10

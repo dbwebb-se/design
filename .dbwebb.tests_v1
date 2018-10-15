@@ -1,0 +1,207 @@
+# --------------------------------------------------------------------------
+#
+# Init
+#
+dbwebb init-me
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom01
+#
+
+#
+# lab environment
+#
+make -f example/make/Makefile
+
+
+
+#
+# redovisa
+#
+rsync -a example/redovisa me/
+cd me/redovisa && composer install
+
+cd me/redovisa && git init
+cd me/redovisa && git add .
+cd me/redovisa && git config user.email "mos@dbwebb.se"
+cd me/redovisa && git config user.name "Mikael Roos"
+cd me/redovisa && git commit -m "First commit"
+cd me/redovisa && git tag -a 1.0.0 -m "My first version"
+dbwebb validate redovisa
+
+
+
+#
+# Ready (make a copy to kmom01 to have as dev env)
+#
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build redovisa kmom01/ && ln -sf ../redovisa/vendor kmom01/redovisa/
+dbwebb validate kmom01
+make dbwebb-inspect options="--yes --no-validate" what=kmom01
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom02
+#
+
+
+#
+# anax-flat/theme
+# https://dbwebb.se/kunskap/bygg-ett-tema-till-anax-flat
+#
+cd me/anax-flat && git clone https://github.com/canax/anax-flat-theme.git theme
+cd me/anax-flat/theme && make npm-install
+cd me/anax-flat/theme && make npm-update
+
+cd me/anax-flat/theme && make less
+cd me/anax-flat/theme && make less-install
+
+cp example/setup/01/anax-flat/config/theme.php me/anax-flat/config/
+
+# Get normalizer using npm
+cd me/anax-flat/theme && npm install normalize.css
+cd me/anax-flat/theme && cp node_modules/normalize.css/normalize.css modules/normalize.less
+
+cp example/setup/01/anax-flat/Makefile me/anax-flat/
+
+cp example/anax-flat/theme/regions.less me/anax-flat/theme/modules
+
+# Get responsive menu using npm
+cd me/anax-flat/theme && npm install desinax-responsive-menu --save-dev
+cd me/anax-flat/theme && cp node_modules/desinax-responsive-menu/src/less/responsive-menu.less modules/
+cd me/anax-flat/theme && cp node_modules/desinax-responsive-menu/src/js/responsive-menu.js js/
+
+cd me/anax-flat/theme && git add .
+cd me/anax-flat/theme && git config user.email "mos@dbwebb.se"
+cd me/anax-flat/theme && git config user.name "Mikael Roos"
+cd me/anax-flat/theme && git commit -a -m "Added LESS modules"
+cd me/anax-flat/theme && git tag -a 2.0.0 -m "First version"
+
+
+
+#
+# Tag it
+#
+# Already tagged above.
+#cd me/anax-flat/theme && git add .
+#cd me/anax-flat/theme && git commit -a -m "Prepare for kmom02"
+#cd me/anax-flat/theme && git tag -a 2.0.1 -m "Second version"
+
+cd me/anax-flat && git add .
+cd me/anax-flat && git commit -a -m "Prepare for kmom02"
+cd me/anax-flat && git tag -a 2.0.0 -m "Second version"
+
+
+
+#
+# Ready
+#
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom02/ && ln -sf ../anax-flat/vendor kmom02/
+#dbwebb validate kmom02
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom03
+
+#
+# https://dbwebb.se/uppgift/me-sida-med-grid#vertikalt
+# Del 1
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-flex.less -O modules/grid-flex.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-float.less -O modules/grid-float.less
+
+touch me/anax-flat/theme/modules/layout.less
+touch me/anax-flat/theme/modules/grid-helpers.less
+
+touch me/anax-flat/content/grid.md
+
+
+
+#
+# https://dbwebb.se/uppgift/me-sida-med-grid#horisontellt
+# Del 2
+
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/typography-grid/less/typography-defaults.less -O modules/typography-defaults.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/typography-grid/less/typography-font-families.less -O modules/typography-font-families.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/typography-grid/less/typography-mixins.less -O modules/typography-mixins.less
+cd me/anax-flat/theme && wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/typography-grid/less/typography-sizes.less -O modules/typography-sizes.less
+
+touch me/anax-flat/theme/modules/typography.less
+
+touch me/anax-flat/content/typography.md
+
+
+
+#
+# Make test
+#
+#cd me/anax-flat && make test # Missing test & needs flexible style.less in less-lint
+cd me/anax-flat/theme && make test
+
+
+
+#
+# Tag it
+#
+cd me/anax-flat/theme && git add .
+cd me/anax-flat/theme && git commit -a -m "Prepare for kmom03"
+cd me/anax-flat/theme && git tag -a 3.0.0 -m "Third version"
+
+cd me/anax-flat && git add .
+cd me/anax-flat && git commit -a -m "Prepare for kmom03"
+cd me/anax-flat && git tag -a 3.0.0 -m "Third version"
+
+
+
+#
+# Ready
+#
+cd me && rsync -a --delete --exclude vendor --exclude node_modules --exclude build anax-flat/ kmom03/ && ln -sf ../anax-flat/vendor kmom03/
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom04
+#
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom05
+#
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom06
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom10
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Inspect
+#
+#make dbwebb-inspect options="--yes --no-validate" what=kmom02
+#make dbwebb-inspect options="--yes --no-validate" what=kmom03
+#make dbwebb-inspect options="--yes --no-validate" what=kmom04
+#make dbwebb-inspect options="--yes --no-validate" what=kmom05
+#make dbwebb-inspect options="--yes --no-validate" what=kmom06
+#make dbwebb-inspect options="--yes --no-validate" what=kmom10

@@ -24,7 +24,7 @@ design()
 #
 designlast()
 {
-    inspectMe "me/anax-flat/htdocs" "" "" "" "anax-flat"
+    inspectMe "me/redovisa/htdocs" "" "" "" "redovisa"
 }
 
 
@@ -62,7 +62,7 @@ function designrepo()
 #
 designkmom01()
 {
-    designrepo "anax-flat" "1.0.0" "2.0.0"
+    designrepo "redovisa" "1.0.0" "2.0.0"
 }
 
 
@@ -72,8 +72,7 @@ designkmom01()
 #
 designkmom02()
 {
-    designrepo "anax-flat" "2.0.0" "3.0.0"
-    designRepo "anax-flat/theme" "2.0.0" "3.0.0"
+    designrepo "redovisa" "2.0.0" "3.0.0"
 }
 
 
@@ -83,8 +82,7 @@ designkmom02()
 #
 designkmom03()
 {
-    designrepo "anax-flat" "3.0.0" "4.0.0"
-    designRepo "anax-flat/theme" "3.0.0" "4.0.0"
+    designrepo "redovisa" "3.0.0" "4.0.0"
 }
 
 
@@ -94,8 +92,7 @@ designkmom03()
 #
 designkmom04()
 {
-    designrepo "anax-flat" "4.0.0" "5.0.0"
-    designRepo "anax-flat/theme" "4.0.0" "5.0.0"
+    designrepo "redovisa" "4.0.0" "5.0.0"
 }
 
 
@@ -104,8 +101,7 @@ designkmom04()
 #
 designkmom05()
 {
-    designrepo "anax-flat" "5.0.0" "6.0.0"
-    designRepo "anax-flat/theme" "5.0.0" "6.0.0"
+    designrepo "redovisa" "5.0.0" "6.0.0"
 }
 
 
@@ -115,8 +111,7 @@ designkmom05()
 #
 designkmom06()
 {
-    designrepo "anax-flat" "6.0.0" "7.0.0"
-    designRepo "anax-flat/theme" "6.0.0" "7.0.0"
+    designrepo "redovisa" "6.0.0" "7.0.0"
 }
 
 
@@ -126,6 +121,5 @@ designkmom06()
 #
 designkmom10()
 {
-    designrepo "anax-flat" "10.0.0" "11.0.0"
-    designRepo "anax-flat/theme" "10.0.0" "11.0.0"
+    designrepo "redovisa" "10.0.0" "11.0.0"
 }

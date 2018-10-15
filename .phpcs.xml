@@ -7,10 +7,8 @@
          xsi:noNamespaceSchemaLocation="
                      http://pmd.sf.net/ruleset_xml_schema.xsd">
     <description>
-        Custom rule set for htmlphp course.
+        Custom rule set for course repo.
     </description>
-
-    <exclude-pattern>imgd.php</exclude-pattern> 
 
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
@@ -18,6 +16,11 @@
     <rule ref="PSR2">
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+
+        <!-- Below may be removed for a rougher check -->
+        <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace" />
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen" />    
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose" />  
     </rule>
     
 </ruleset>
