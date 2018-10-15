@@ -1,0 +1,6 @@
+version: "3"
+services:
+    website:
+        image: anax/dev:latest-apache
+        volumes: [ ".:/home/anax/repo" ]
+        ports: [ "10099:80" ]

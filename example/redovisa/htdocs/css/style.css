@@ -1,0 +1,117 @@
+/**
+ * General setup for layout.
+ */
+html {
+    overflow-y: scroll;
+    background-color: #424242;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    word-wrap: break-word;
+}
+
+.outer-wrap {
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.inner-wrap {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 0 0.5em;
+}
+
+
+
+/**
+ * Header
+ */
+.outer-wrap-header {
+    max-width: 100%;
+    min-height: 2em;
+    background-color: #000;
+    color: #fff;
+}
+
+.outer-wrap-header {
+    position: relative;
+}
+
+.inner-wrap-header {
+    max-width: 100%;
+}
+
+.header-logo {
+    position: absolute;
+    top: 7em;
+    left: 1em;
+}
+
+
+
+/**
+ * Navbar
+ */
+.outer-wrap-navbar {
+    max-width: 100%;
+    min-height: 2em;
+    background-color: #535353;
+    color: #fff;
+    padding: 0.5em 0;
+}
+
+.outer-wrap-navbar a {
+    color: #fff;
+}
+
+.outer-wrap-navbar a:hover {
+    color: #ddd;
+}
+
+
+
+/**
+ * Main
+ */
+.outer-wrap-main {
+    min-height: 20em;
+    margin-bottom: 4em;
+}
+
+.wrap-main h1 {
+    border-bottom: 1px solid #999;
+}
+
+.wrap-main h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+
+
+/**
+ * Footer
+ */
+.outer-wrap-footer {
+    max-width: 100%;
+    min-height: 10em;
+    background-color: #424242;
+    color: #fff;
+    padding: 1em 0;
+}
+
+
+
+/**
+ * Responsive
+ */
+@media screen and (max-width: 970px) {
+    .header-logo {
+        display: none;
+    }
+}

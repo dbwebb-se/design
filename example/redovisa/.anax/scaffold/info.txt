@@ -1,0 +1,5 @@
+Create a me-site for the design-course.
+
+Standard installation of Anax Flat (latest version),
+adapting for the design course me page requirements,
+prepared to work with themes.
