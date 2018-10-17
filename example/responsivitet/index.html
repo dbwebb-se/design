@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Responsivitet | dbwebb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="default.css" id="page-style">
+</head>
+<body>
+    <div class="style-buttons-container">
+        <button class="style-button" data-style="default.css">default.css</button>
+        <button class="style-button" data-style="simple.css">simple.css</button>
+        <button class="style-button" data-style="removing.css">removing.css</button>
+        <button class="style-button" data-style="stacking.css">stacking.css</button>
+    </div>
+
+    <div class="outer-wrap outer-wrap-main">
+        <div class="inner-wrap inner-wrap-main">
+            <div class="row">
+                <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                    <div class="block toc">
+
+                        <h4>Innehåll</h4>
+
+                        <ul class="toc">
+
+                            <li class="level-0"><a href="https://dbwebb.se/guide/design-med-html5-och-css3">Index</a></li><li class="section-header"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/intro-till-guiden">Intro till guiden</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/en-grund-i-html">En grund i HTML</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/normalisering-av-css">Normalisering av CSS</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/semantisk-html">Semantisk HTML</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/css-grid-layout">CSS Grid Layout</a></li><li class="section-header selected"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/responsivitet">Responsivitet</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/html-strukturen">HTML struktur</a></li><li class="section-header"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/typografi">Typografi</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/enheter">Enheter</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/grund">Grund</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/ett_lasbart_typsnitt">Ett läsbart typsnitt</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/bredd_pa_text">Bredd på text</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/vertikal_rytm">Vertikal rytm</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/teckenavstand">Teckenavstånd</a></li><li class="section-header"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/farg">Färg</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/standard_farger">Standard färger</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/teori">Färgteori</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/monokromatisk">Monokromatiskt färgschema</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/komplement">Komplement färgschema</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/analogt">Analogt färgschema</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/triadiskt">Triadiskt färgschema</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/kontrast">Kontrast</a></li><li class="level-2"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/kansla">Känsla</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/genomskinlighet">Genomskinlighet</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/gradienter">Gradienter</a></li><li class="section-header"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/bilder">Bilder</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/retina-bilder">Retina bilder</a></li><li class="section-header"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/the-final-touch">The final touch</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/helheten">Helheten</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/detaljer">Detaljer</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/rorelse">Rörelse</a></li><li class="level-1"><a href="https://dbwebb.se/guide/design-med-html5-och-css3/djup-och-3d">Djup och 3D</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <main class="main has-sidebar-left has-sidebar" role="main">
+                    <article class="article">
+                        <h1>Responsivitet</h1>
+
+                        <p>Under de senaste 10 åren har andelen av mobilt webbsurfande gått upp från runt 0% till att i år ligga över 50% och därmed mer än webbsurfande från datorer. Detta ställer speciella krav på oss som utvecklare och designers för att få till en bra design både för små och stora enheter.</p>
+
+                        <p>I de följande delarna av guiden ska vi titta på olika taktiker för att få till bra design. Vi tar utgångspunkt i den HTML-stukturen som finns på dbwebb.se och som vi bekantade oss med i första delen av guiden.</p>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-wrap outer-wrap-footer" role="contentinfo">
+        <div class="inner-wrap inner-wrap-footer">
+            <div class="row">
+                <div class="footer">
+                    <div class="columns footer-column-wrapper">
+                        <div class="column footer-column">
+                            <div class="footer-column-x footer-column-1 block">
+                                <h4>Om dbwebb</h4>
+
+                                <p><strong>dbwebb.se</strong> är en lärande community för programmering i webbmiljö.</p>
+
+                                <p>Lär dig själv - och hjälp andra lära sig - databaser, webbprogrammering och webbutveckling. Kika gärna på våra kurser, artiklar, guider, uppgifter och delta i gemenskapen.</p>
+
+                                <p><a href="https://dbwebb.se/om">Läs mer om dbwebb&nbsp;»</a></p>
+                            </div>
+                        </div>
+                        <div class="column footer-column">
+                            <div class="footer-column-x footer-column-2 block">
+                                <h4><i class="fa fa-users"></i> Social</h4>
+
+                                <p>Skapa viktiga kontakter och bygg ditt nätverk. Använd <a href="https://dbwebb.se/social">dbwebb’s sociala nätverk</a> som en bas.</p>
+
+                                <p><a href="https://dbwebb.se/social/facebook"><i class="fab fa-icon fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/twitter"><i class="fab fa-icon fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/googleplus"><i class="fab fa-icon fa-google-plus-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/linkedin"><i class="fab fa-icon fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/github"><i class="fab fa-icon fa-github-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/flickr"><i class="fab fa-icon fa-flickr fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/instagram"><i class="fab fa-icon fa-instagram fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://dbwebb.se/social/youtube"><i class="fab fa-icon fa-youtube-square fa-2x" aria-hidden="true"></i></a></p>
+                                </div>
+                            </div>
+                            <div class="column footer-column">
+                                <div class="footer-column-x footer-column-3 block">
+                                    <h4><i class="fa fa-university"></i> Sök Webbprogrammering HT18</h4>
+
+                                    <p>Ansökan till utbildningar för hösten 2018 öppnar den 15:e mars.</p>
+
+                                    <p>Ansök i tid! Sök med både betyg och högskoleprov för att maximera dina chanser att komma in.</p>
+
+                                    <p>Vi erbjuder inga utbildningar att söka till VT18.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block site-footer">
+                            <p>Copyright © 2008-2018&nbsp;<a href="https://mikaelroos.se">Mikael Roos</a> (mos@dbwebb.se)</p>
+                            <ul>
+                                <li><a href="https://dbwebb.se/om/licens-och-rattigheter">Licens</a></li>
+                                <li><a href="https://dbwebb.se/om/cookies">Cookies</a></li>
+                                <li><a href="https://dbwebb.se/rss">RSS</a></li>
+                                <li><a href="https://github.com/dbwebb-se/website">Källkod</a></li>
+                                <li><a href="https://dbwebb.se/om/kontakt">Kontakt</a></li>
+                                <li><a href="https://dbwebb.se/om">Om</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+    </html>

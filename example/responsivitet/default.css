@@ -1,0 +1,116 @@
+body {
+    line-height: 1.4;
+}
+
+p {
+    font-size: 1.25em;
+    margin-bottom: 1.75rem; /* 1.4 * 1.25em vår baseline */
+}
+
+li {
+    font-size: 1.25em;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 3.5rem; /* baseline * 2, för att skapa mer utrymme */
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-bottom: 1.75rem; /* 1.4 * 1.25em vår baseline */
+}
+
+
+
+.inner-wrap {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1100px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.sidebar-left, .sidebar-right {
+    display: inline;
+    float: left;
+    width: 28.125%;
+    margin-left: .52083333%;
+    margin-right: .52083333%;
+}
+
+.main.has-sidebar-left {
+    display: inline;
+    float: left;
+    width: 65.625%;
+    margin-right: .52083333%;
+    margin-left: 4.6875%;
+}
+
+.toc {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.toc .section-header {
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    margin-top: 1.75rem;
+}
+
+.outer-wrap-footer {
+    background-color: #424242;
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+
+.footer-column-wrapper {
+    color: #ddd;
+    border-bottom: 1px solid #666;
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+}
+
+.footer-column-wrapper a {
+    color: inherit;
+}
+
+.footer-column {
+    height: 100%;
+    display: inline;
+    float: left;
+    width: 32.29166667%;
+    margin-left: .52083333%;
+    margin-right: .52083333%;
+}
+
+.site-footer {
+    color: #aaa;
+    text-align: center;
+    padding-bottom: 24px;
+    display: inline;
+    float: left;
+    width: 98.95833333%;
+    margin-left: .52083333%;
+    margin-right: .52083333%;
+}
+
+.site-footer a {
+    color: inherit;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.site-footer li {
+    display: inline-block;
+}
