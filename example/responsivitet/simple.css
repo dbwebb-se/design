@@ -33,19 +33,20 @@ h4 {
     clear: both;
 }
 
-.sidebar-left, .sidebar-right {
+.sidebar-left,
+.sidebar-right {
     display: inline;
     float: left;
     width: 28.125%;
-    margin-left: .52083333%;
-    margin-right: .52083333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
 }
 
 .main.has-sidebar-left {
     display: inline;
     float: left;
     width: 65.625%;
-    margin-right: .52083333%;
+    margin-right: 0.52083333%;
     margin-left: 4.6875%;
 }
 
@@ -84,8 +85,8 @@ h4 {
     display: inline;
     float: left;
     width: 32.29166667%;
-    margin-left: .52083333%;
-    margin-right: .52083333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
 }
 
 .site-footer {
@@ -95,8 +96,8 @@ h4 {
     display: inline;
     float: left;
     width: 98.95833333%;
-    margin-left: .52083333%;
-    margin-right: .52083333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
 }
 
 .site-footer a {

@@ -2,7 +2,7 @@
     var pagestyle = document.getElementById("page-style");
     var buttons = document.getElementsByClassName("style-button");
 
-    function swapSheet(event) {
+    function swapSheet() {
         pagestyle.setAttribute("href", this.dataset.style);
     }
 
