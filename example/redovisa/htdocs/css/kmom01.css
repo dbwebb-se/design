@@ -4,3 +4,13 @@
  * This stylesheet is for the design course and kmom01. Fill it with style
  * to style up the website so it is useable.
  */
+
+/* Hide submenu, leave this to kmom02 */
+.rm-desktop ul {
+    display: none;
+}
+
+/* Hide responsive/mobile menu, leave this to kmom02 */
+.rm-navbar-max {
+    display: none;
+}

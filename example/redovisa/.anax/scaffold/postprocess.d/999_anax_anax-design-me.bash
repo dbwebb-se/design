@@ -17,6 +17,7 @@ rm -f content/about.md
 
 # Get items from htdocs/.
 rsync -a vendor/anax/anax-design-me/htdocs ./
+rm htdocs/css/style.css
 
 # Get/remove items from src/.
 rm -rf src/Controller
