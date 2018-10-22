@@ -406,8 +406,8 @@ bats:
 .PHONY: theme
 theme:
 	@$(call HELPTEXT,$@)
-	[ ! -d theme ] || $(MAKE) --directory=theme build install
-	#[ ! -d theme ] || ( cd theme && make build install )
+	[ ! -d theme ] || $(MAKE) --directory=theme build
+	rsync -a theme/htdocs/css htdocs/
 
 
 

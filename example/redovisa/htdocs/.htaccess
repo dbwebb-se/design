@@ -1,7 +1,7 @@
 #
 # This is a modified rewrite to fit Anax when working on both local development
 # environment and publishing to www.student.bth.se.
-# Adapted for the oophp course.
+# Adapted for the design course.
 #
 # Do NOT forget to change /~mosstud/ to your own student acronym.
 #
@@ -15,10 +15,10 @@ RewriteRule (.*) - [NC,L]
 
 # Rewrite 1 - For request via www.student.bth.se
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteRule ^image/(.*)$ /~mosstud/dbwebb-kurser/oophp/me/redovisa/htdocs/cimage/img.php?src=$1 [QSA,NC,L]
+RewriteRule ^image/(.*)$ /~mosstud/dbwebb-kurser/design/me/redovisa/htdocs/cimage/img.php?src=$1 [QSA,NC,L]
 
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) /~mosstud/dbwebb-kurser/oophp/me/redovisa/htdocs/index.php/$1 [NC,L]
+RewriteRule (.*) /~mosstud/dbwebb-kurser/design/me/redovisa/htdocs/index.php/$1 [NC,L]
 
 
 # Rewrite 2 - For other requests

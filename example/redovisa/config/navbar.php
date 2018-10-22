@@ -4,24 +4,9 @@
  */
 return [
     [
-        "text" => "Hem",
+        "text" => "Home",
         "url" => "",
-        "title" => "Första sidan, börja här.",
-    ],
-    [
-        "text" => "Redovisning",
-        "url" => "redovisning",
-        "title" => "Redovisningstexter från kursmomenten.",
-    ],
-    [
-        "text" => "Om",
-        "url" => "om",
-        "title" => "Om denna webbplats.",
-    ],
-    [
-        "text" => "Lek",
-        "url" => "lek",
-        "title" => "Lek runt och testa att integrera kod i me-sidan.",
+        "title" => "The start page.",
     ],
     [
         "text" => "Development",
@@ -31,6 +16,11 @@ return [
     [
         "text" => "Test",
         "url" => "test",
-        "title" => "Anax test page for routes.",
+        "title" => "Some small routes for testing.",
     ],
+    [
+        "text" => "About",
+        "url" => "about",
+        "title" => "About this site.",
+    ]
 ];
