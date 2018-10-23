@@ -10,7 +10,6 @@ return [
     // all the other views are rendered.
     "layout" => [
         "region" => "layout",
-        //"template" => "anax/v2/layout/default",
         "template" => "anax/v2/layout/dbwebb_se",
         "data" => [
             "baseTitle" => " | design",
@@ -19,8 +18,9 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                //"css/style.css",
+                // Change here to set another default stylesheet
                 "css/dbwebb-se.min.css",
+                //"css/kmom01.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",

@@ -17,8 +17,16 @@ $charset = $charset ?? "utf-8";
 $title = ($title ?? "No title") . ($baseTitle ?? " | No base title defined");
 $bodyClass = $bodyClass ?? null;
 
-// Get the active stylesheet, if any.
+// Set active stylesheet
+$request = $di->get("request");
+$response = $di->get("response");
 $session = $di->get("session");
+if ($request->getGet("style")) {
+    $session->set("redirect", currentUrl());
+    redirect("style/update/" . rawurlencode($_GET["style"]));
+}
+
+// Get the active stylesheet, if any.
 $activeStyle = $session->get(StyleChooserController::getSessionKey(), null);
 if ($activeStyle) {
     $stylesheets = [];
@@ -26,11 +34,17 @@ if ($activeStyle) {
 }
 
 // Get hgrid & vgrid
-if (isset($_GET["hgrid"])) {
+if ($request->getGet("hgrid")) {
     $htmlClass[] = "hgrid";
 }
-if (isset($_GET["vgrid"])) {
+if ($request->getGet("vgrid")) {
     $htmlClass[] = "vgrid";
+}
+
+// Get flash message if any and add to region flash-message
+$flashMessage = $session->getOnce("flashmessage");
+if ($flashMessage) {
+    $di->get("view")->add(__DIR__ . "/../flashmessage/default", ["message" => $flashMessage], "flash-message");
 }
 
 // Get current route to make as body class
@@ -146,6 +160,21 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
         <div class="row">
             <div class="region-breadcrumb">
                 <?php renderRegion("breadcrumb")?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
+
+
+<!-- flash message -->
+<?php if (regionHasContent("flash-message")) : ?>
+<div class="outer-wrap outer-wrap-flash-message">
+    <div class="inner-wrap inner-wrap-flash-message">
+        <div class="row">
+            <div class="region-flash-message">
+                <?php renderRegion("flash-message")?>
             </div>
         </div>
     </div>

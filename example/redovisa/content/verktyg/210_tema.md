@@ -12,22 +12,6 @@ Sammantaget blir styleväljaren en enkel möjlighet att leka runt och testa olik
 Bygg egna teman
 -------------------------
 
+Hur kompilera eget tema.
 
-Välj en layout
--------------------------
-
-
-Skicka en klass till en vy
--------------------------
-
-
-Visa gridet
--------------------------
-
-
-Visa regionerna
--------------------------
-
-
-Styla en viss route
--------------------------
+Hur installeras det?

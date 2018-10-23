@@ -16,11 +16,11 @@ class StyleChooserController implements ContainerInjectableInterface
 
 
     /**
-    * @var string $cssUrl The baseurl to where the css files are.
-    * @var string $cssDir The path to the directory storing css files.
-    * @var array  $styles The styles available in the style directory.
-    * @var string $key    The session key used to store the active style.
-    */
+     * @var string $cssUrl The baseurl to where the css files are.
+     * @var string $cssDir The path to the directory storing css files.
+     * @var array  $styles The styles available in the style directory.
+     * @var string $key    The session key used to store the active style.
+     */
     private $cssUrl = "css";
     private $cssDir = ANAX_INSTALL_PATH . "/htdocs/css";
     private $styles = [];
@@ -125,5 +125,40 @@ class StyleChooserController implements ContainerInjectableInterface
         }
 
         return $response->redirect("style");
+    }
+
+
+
+    /**
+     * Update current selected style using a GET url and redirect to last
+     * page visited.
+     *
+     * @param string $style the key to the style to use.
+     *
+     * @return object
+     */
+    public function updateActionGet($style) : object
+    {
+        $response = $this->di->get("response");
+        $request = $this->di->get("request");
+        $session = $this->di->get("session");
+
+        $key = $this->cssUrl . "/" . $style . ".css";
+        $keyMin = $this->cssUrl . "/" . $style . ".min.css";
+
+        $flashMessage = null;
+        if ($style === "none") {
+            $session->set("flashmessage", "Unsetting the style and using the default style.");
+            $session->set(self::$key, null);
+        } elseif (array_key_exists($keyMin, $this->styles)) {
+            $session->set("flashmessage", "Now using the style '$keyMin'.");
+            $session->set(self::$key, $keyMin);
+        } elseif (array_key_exists($key, $this->styles)) {
+            $session->set("flashmessage", "Now using the style '$key'.");
+            $session->set(self::$key, $key);
+        }
+
+        $url = $session->getOnce("redirect", "style");
+        return $response->redirect($url);
     }
 }
