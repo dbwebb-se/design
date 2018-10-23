@@ -1,0 +1,93 @@
+/** --------------------------------------------------------------
+ * Figure through .figure
+ */
+.figure {
+    display: table;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    border: 2px solid #7f6300;
+
+    /* Chrome shinks images in td */
+
+    /* Position the images */
+}
+
+.figure img {
+    max-width: 100%;
+    display: block;
+}
+
+.figure figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    padding-top: 12px;
+}
+
+.figure figcaption p {
+    margin-top: 0;
+}
+
+.figure td img {
+    max-width: none;
+}
+
+.figure.left {
+    float: left;
+    margin-right: 8px;
+}
+
+.figure.right {
+    float: right;
+    margin-left: 8px;
+}
+
+.figure.center {
+    clear: both;
+    margin: auto;
+}
+
+.figure.center figcaption {
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .figure.w50 {
+        width: 300px;
+    }
+
+    .figure.w25 {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .figure.w50 {
+        width: 225px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .figure.w50 {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .figure.w50 {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .figure.w50 {
+        min-width: 100%;
+    }
+
+    .figure.left,
+    .figure.right {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

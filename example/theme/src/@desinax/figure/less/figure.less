@@ -1,0 +1,95 @@
+/** --------------------------------------------------------------
+ * Figure through .figure
+ */
+#desinax-figure {
+    .figure() {
+        display: table;
+        padding: 0;
+        margin: 0;
+        //margin-bottom: @magicNumber - 4px;
+
+        img {
+            max-width: 100%; // Make images responsive
+            display: block;
+        }
+
+        figcaption {
+            display: table-caption;
+            caption-side: bottom;
+            //padding-top: @magicNumber / 2;
+
+            p {
+                margin-top: 0;
+                font-style: italic;
+            }
+        }
+
+        /* Chrome shinks images in td */
+        td img {
+            max-width: none;
+        }
+
+        /* Position the images */
+        &.left {
+            float: left;
+            margin-right: 8px;
+        }
+
+        &.right {
+            float: right;
+            margin-left: 8px;
+        }
+
+        &.center {
+            clear: both;
+            margin: auto;
+
+            figcaption {
+                text-align: center;
+            }
+        }
+
+        @media screen {
+            @media (max-width: 600px) {
+                &.w50 {
+                    width: 300px;
+                }
+
+                &.w25 {
+                    width: 150px;
+                }
+            }
+
+            @media (max-width: 550px) {
+                &.w50 {
+                    width: 225px;
+                }
+            }
+
+            @media (max-width: 450px) {
+                &.w50 {
+                    width: 200px;
+                }
+            }
+
+            @media (max-width: 400px) {
+                &.w50 {
+                    width: 150px;
+                }
+            }
+
+            @media (max-width: 320px) {
+                &.w50 {
+                    min-width: 100%;
+                }
+
+                &.left,
+                &.right {
+                    float: none;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,422 @@
+/**
+ * Style for responsive menu
+ */
+
+// General
+//@navbarAccentColor:         #9FB129;
+@navbarItemBgColor:         inherit; //#444;
+@navbarItemColor:           inherit;
+@navbarItemHoverColor:      inherit; //lighten(@navbarItemColor, 20%);
+@navbarItemHoverBgColor:    inherit; //#666;
+
+// Menu item current/selected
+@navbarItemSelectedColor:       inherit;
+@navbarItemSelectedBgColor:     inherit;
+//@navbarItemSelectedBorderColor: darken(lime, 10%);
+
+// Mobile button
+//@navbarMobileItemBorderColor:           #eee;
+//@navbarMobileItemHoverBorderColor:      @navbarAccentColor;
+//@navbarMobileBorderColor:               #ddd;
+
+// The menu button
+@navbarMenuButtonColor:         inherit;
+@navbarMenuButtonBgColor:       transparent;
+//@navbarMenuButtonBorderColor:   #999;
+
+// The menu button hover
+@navbarMenuButtonHoverColor:         @navbarMenuButtonColor;
+@navbarMenuButtonHoverBgColor:       @navbarMenuButtonBgColor;
+//@navbarMenuButtonHoverBorderColor:   #333;
+
+// The menu button clicked
+@navbarMenuButtonClickedColor:          #9FB129;
+@navbarMenuButtonClickedBgColor:        @navbarMenuButtonHoverBgColor;
+//@navbarMenuButtonClickedBorderColor:    lime;
+
+// Submenu
+@submenuZIndex:             9999;
+@submenuBgColor:            @navbarItemBgColor;
+@submenuMinWidth:           10em;
+@submenuItemBorderColor:    #eee;
+
+// Mobile menu
+@mobileBgColor:     #444;
+@mobileColor:       #fff;
+
+// Max menu
+@maxBgColor:                #131313;
+@maxMenuItemClickedBgColor: transparent; //@navbarMenuButtonClickedColor;
+@maxButtonColor:            inherit;
+@maxButtonClickedColor:     @navbarMenuButtonClickedColor;
+@maxButtonSubmenuBgColor:    #444;
+@maxButtonSubmenuHoverBgColor: #ccc;
+
+/**
+ * Outer wrapper for menu
+ */
+.rm-navbar {
+
+    position: relative;
+
+    // Clear the style for ul
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+
+/**
+ * Avoid scrolling mobile devices
+ * OBSOLETE?
+ */
+.rm-modal {
+//    position: fixed;
+//    overflow: hidden;
+}
+
+
+
+/**
+ * Meny layout for the small buttonized menu.
+ */
+.rm-small {
+    display: none;
+    float: right;
+}
+
+a.rm-button {
+    display: inline-block;
+    color: @navbarMenuButtonColor;
+    background-color: @navbarMenuButtonBgColor;
+    outline: none;
+
+    //&:hover, // Avoid hover, click, double-tap behaviour
+    &:active {
+        color: @navbarMenuButtonHoverColor;
+        background-color: @navbarMenuButtonHoverBgColor;
+    }
+
+    .rm-button-face-1 {
+        position: absolute;
+        transition: color 0.10s ease;
+    }
+
+    .rm-button-face-2 {
+        position: relative;
+        color: transparent;
+        transition: color 0.10s ease;
+    }
+
+    &.rm-clicked {
+        color: @navbarMenuButtonClickedColor;
+        background-color: @navbarMenuButtonClickedBgColor;
+
+        .rm-button-face-1 {
+            color: transparent;
+        }
+
+        .rm-button-face-2 {
+            z-index: 2;
+            color: inherit;
+        }
+    }
+}
+
+
+
+/**
+ * Standard meny layout, valid for any subtype.
+ */
+.rm-default {
+
+    li {
+        display: inline-block;
+
+        // Hover over a menu item
+        &:hover {
+            //color: @navbarItemHoverColor;
+            //background-color: @navbarItemHoverBgColor;
+        }
+
+        // Menu item for submenu
+        li {
+            display: block;
+            min-width: @submenuMinWidth;
+        }
+    }
+
+    // The link of the menu item
+    a {
+        display: block;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 1em;
+        outline: none;
+
+        &:hover {
+        }
+    }
+
+     // The base for the submenu
+     ul {
+        position: absolute;
+        z-index: @submenuZIndex;
+        left: -9999px;
+        //padding-left: 8px;
+
+        // Display the submenu, class to use from javascript
+        &.rm-show-submenu {
+            left: 0;
+        }
+
+        li {
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+         }
+
+         // Submenu
+         ul {
+             left: -9999px;
+         }
+     }
+}
+
+
+
+/**
+ * Menu layout for the desktop variant, usually full width of browser.
+ */
+.rm-desktop {
+
+    ul {
+        background-color: @submenuBgColor;
+    }
+
+    li {
+        position: relative;
+
+        // Selected/current menu item
+        &.rm-selected-parent,  // For submenu
+        &.rm-selected,
+        &.selected-parent, // for selected descendants
+        &.selected {
+            //color: @navbarItemSelectedColor;
+            //background-color: @navbarItemSelectedBgColor;
+        }
+
+
+
+        // Style hovering over a menu item
+        a:hover,
+        &.current-menu-item a {
+            text-decoration: underline;
+        }
+
+
+
+        // The link of the menu item
+        a {
+            color: @navbarItemColor;
+            background-color: @navbarItemBgColor;
+
+            &:hover {
+                color: @navbarItemHoverColor;
+                background-color: @navbarItemHoverBgColor;
+            }
+        }
+
+
+
+        // Hover over a menu item and display submenu
+        &:hover {
+            //color: @navbarItemHoverColor;
+            //background-color: @navbarItemHoverBgColor;
+
+            // To display submenu(s)
+            > ul {
+                left: 0;
+            }
+
+            > ul.rm-submenu-level-1 {
+                left: auto;
+                left: 30%;
+            }
+        }
+
+
+        // Dropdown submenu, remove hide show button
+        .rm-submenu-button {
+            display: none;
+        }
+    }
+}
+
+
+
+/**
+ * Menu layout for the mobile variant, usually for mobile screens.
+ */
+.rm-mobile {
+    width: 100%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+    background-color: @mobileBgColor;
+    color: @mobileColor;
+
+    a {
+        color: inherit;
+    }
+
+    li {
+        display: block;
+        box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
+
+        // All items of the menu
+        a:before {
+            //float: right;
+            //font-family: FontAwesome;
+            //content: "\f0da";
+        }
+
+/*        // Header of submenu is closed
+        //&.sub-menu, // For WordPress menu generating
+        &.rm-submenu > a:before {
+            content: "\f0d7";
+        }
+
+        // Header of submenu is opened
+        &.rm-submenu-open > a:before {
+            content: "\f0d8";
+        }
+*/
+        // Display the submenu
+        &.rm-submenu-open > ul {
+            position: relative;
+            left: 0;
+        }
+
+        // Menu item for submenu
+        li {
+            //border: none;
+            //border-top: 1px solid @submenuItemBorderColor;
+        }
+
+        // Hover over a menu item
+        &:hover {
+            //border-color: @navbarMobileItemHoverBorderColor;
+        }
+    }
+}
+
+
+
+/**
+ * Menu layout for the max variant, for mobile screens and complete menues.
+ * Swipe from right by default.
+ */
+.rm-max {
+
+    // Place the menu button
+    &.rm-navbar {
+        position: absolute;
+        top: 16px;
+        right: 24px;
+    }
+
+    // Show the button menu
+    .rm-small {
+        display: block;
+
+        .rm-button {
+            color: @maxButtonColor;
+
+            &.rm-clicked {
+                //background-color: transparent;
+                color: @maxButtonClickedColor;
+                position: fixed;
+                top: 16px;
+                right: 24px;
+                z-index: 999;
+            }
+        }
+    }
+
+    // Customize the mobile menu, hide by default
+    .rm-mobile {
+        transition: all 0.15s linear;
+        position: fixed;
+        z-index: 998;
+        top: 0;
+        transform: translateX(100%);
+        width: 500px;
+        max-width: 500px;
+        height: 500px;
+        overflow-y: auto;
+        padding-top: 72px;
+        background-color: @maxBgColor;
+
+
+        /* Color when menu item is clicked */
+        li a:active {
+            background-color: @maxMenuItemClickedBgColor;
+        }
+
+        &.rm-clicked {
+            transform: translateX(0);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button for submenu */
+        .rm-submenu-button {
+            float: right;
+            box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
+            background-color: @maxButtonSubmenuBgColor;
+            padding: 8px 24px;
+            margin-right: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+
+            // Really needed for compatibility?
+            position: relative;
+            z-index: 1;
+
+
+            &:after {
+                content: "\25BC";
+            }
+
+            &:hover {
+                text-decoration: none;
+                background-color: @maxButtonSubmenuHoverBgColor;
+            }
+        }
+
+        /* Style for submenu */
+        li ul {
+            padding-left: 8px;
+        }
+
+        // Header of submenu is opened
+        .rm-submenu-open > .rm-submenu-button:after {
+            content: "\25B2";
+        }
+
+    }
+
+    &.rm-swipe-left {
+        .rm-mobile {
+            left: 0;
+        }
+    }
+
+    &.rm-swipe-right {
+        .rm-mobile {
+            right: 0;
+        }
+    }
+}

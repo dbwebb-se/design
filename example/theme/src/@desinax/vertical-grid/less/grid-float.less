@@ -1,0 +1,91 @@
+/**
+ * Responsive Grid
+ */
+// Default grid, change to fit your requirements.
+@columnWidth:   60;
+@gutterWidth:   20;
+@columns:       12;
+
+// Utility variable, you should never need to modify this
+@gridSystemWidth: @columns * (@columnWidth + @gutterWidth) * 1px;
+
+// Use % for fluid layout
+@totalWidth: 100% / @gridSystemWidth;
+
+
+
+/**
+ * A small clearfix:
+ * http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
+ */
+.clearfix() {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Wrap grid in a container.
+ */
+.container() {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+/**
+ * All columns must be wrapped in a row.
+ */
+.row(@columns: @columns) {
+    display: block;
+    width: @totalWidth * (@gridSystemWidth + @gutterWidth);
+    margin-left: -1 * @totalWidth * @gutterWidth / 2;
+    margin-right: -1 * @totalWidth * @gutterWidth / 2;
+
+    .clearfix();
+}
+
+
+
+/**
+ * Create a column spanning @col columns.
+ */
+.column(@col, @columns: @columns) {
+    display: inline;
+    float: left;
+    width: @totalWidth * (((@columnWidth + @gutterWidth) * @col ) - @gutterWidth);
+    margin-left: @totalWidth * @gutterWidth / 2;
+    margin-right: @totalWidth * @gutterWidth / 2;
+}
+
+
+
+/**
+ * Push a column @offset columns.
+ */
+.push(@offset: 1) {
+    margin-left: @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+}
+
+
+
+/**
+ * Pull a column left @offset columns.
+ */
+.pull(@offset: 1) {
+    margin-left: -1 * @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+}
+
+
+
+/**
+ * Pull a column right @offset columns.
+ */
+.pull-right(@offset: 1) {
+    margin-right: -1 * @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+}

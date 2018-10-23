@@ -1,0 +1,64 @@
+/** ==============================================================
+ * image overlay.
+ *
+ */
+
+/**
+ * Variables used in module
+ */
+@magicNumber: 24px;
+@borderColor: #999;
+@bgColor: #eee;
+
+
+
+/**
+ * Settings for in module
+ */
+.image-overlay {
+    position: relative;
+    margin-bottom: @magicNumber * 2;
+    
+    .figure {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        max-width: 100%;
+
+        figcaption {
+            display: block;
+        }
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    ul {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 1em;
+        border-left: 1px solid @borderColor;
+        border-bottom: 1px solid @borderColor;
+    }
+    
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border-right: 1px solid @borderColor;
+        
+        a {
+            display: inline-block;
+            padding: 0.3em 1.5em;;
+            background-color: @bgColor;
+            outline: none;
+        }
+        
+        .active {
+            background-color: transparent;
+        }
+    }
+}

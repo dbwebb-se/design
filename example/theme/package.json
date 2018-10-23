@@ -1,0 +1,48 @@
+{
+  "name": "@desinax/theme",
+  "version": "0.9.0",
+  "description": "Base for desinax themes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desinax/theme.git"
+  },
+  "keywords": [
+    "anax",
+    "theme",
+    "css",
+    "less",
+    "sass",
+    "style"
+  ],
+  "author": "Mikael Roos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desinax/theme/issues"
+  },
+  "homepage": "https://github.com/desinax/theme#readme",
+  "dependencies": {
+    "@desinax/figure": "^1.0.7",
+    "@desinax/general": "^1.0.3",
+    "@desinax/link": "^1.0.1",
+    "@desinax/mixin": "^1.0.2",
+    "@desinax/responsive-menu": "^1.1.4",
+    "@desinax/typographic-grid": "^1.0.2",
+    "@desinax/vertical-grid": "^1.0.3",
+    "@fortawesome/fontawesome-free": "^5.4.1",
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "@desinax/css-styleguide": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.11.1",
+    "javascript-style-guide": "^0.9.10",
+    "jsonlint": "^1.6.3",
+    "less": "^3.8.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "stylelint": "^9.6.0"
+  }
+}

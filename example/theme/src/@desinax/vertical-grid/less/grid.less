@@ -1,0 +1,135 @@
+/**
+ * Fluid and Responsive Vertical Grid
+ */
+// Default grid, change to fit your requirements.
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+@gridType:      "float"; // "flex"
+
+
+
+// /**
+//  * A small clearfix:
+//  * http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
+//  */
+// .clearfix() {
+//     &::after {
+//         content: "";
+//         display: block;
+//         clear: both;
+//     }
+// }
+
+
+
+/**
+ * Namespace what could be namespaced
+ */
+#desinax-vgrid {
+
+    // Utility variable, you should never need to modify this
+    @gridSystemWidth: @columns * (@columnWidth + @gutterWidth) * 1px;
+
+    // Use % for fluid layout
+    @totalWidth: 100% / @gridSystemWidth;
+
+
+
+    /**
+     * Wrap grid in a container.
+     */
+    .grid(@maxWidth) {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: @maxWidth;
+    }
+
+
+
+    /**
+     * Show grid.
+     */
+    .showGrid(@maxWidth, @gridImage) {
+        background: url("@{gridImage}") repeat-y fixed center center;
+        background-size: 100% auto;
+
+        @media (min-width: @maxWidth) {
+            background-size: @maxWidth auto;
+        }
+    }
+
+
+
+    /**
+     * All columns must be wrapped in a row.
+     */
+    .row(@columns: @columns) when (@gridType = "float") {
+        display: block;
+        width: @totalWidth * (@gridSystemWidth + @gutterWidth);
+    }
+
+    .row(@columns: @columns) when (@gridType = "flex") {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .row(@columns: @columns) {
+        margin-left: -1 * @totalWidth * @gutterWidth / 2;
+        margin-right: -1 * @totalWidth * @gutterWidth / 2;
+
+        // Clearfix
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+
+
+    /**
+     * Create a column spanning @col columns.
+     */
+    .column(@col, @columns: @columns) when (@gridType = "float") {
+        display: inline;
+        float: left;
+    }
+
+    .column(@col, @columns: @columns) when (@gridType = "flex") {
+        flex: 0 0 auto;
+    }
+
+    .column(@col, @columns: @columns) {
+        width: @totalWidth * (((@columnWidth + @gutterWidth) * @col ) - @gutterWidth);
+        margin-left: @totalWidth * @gutterWidth / 2;
+        margin-right: @totalWidth * @gutterWidth / 2;
+    }
+
+
+
+    /**
+     * Push a column @offset columns.
+     */
+    .push(@offset: 1) {
+        margin-left: @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+    }
+
+
+
+    /**
+     * Pull a column left @offset columns.
+     */
+    .pull(@offset: 1) {
+        margin-left: -1 * @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+    }
+
+
+
+    /**
+     * Pull a column right @offset columns.
+     */
+    .pull-right(@offset: 1) {
+        margin-right: -1 * @totalWidth * @offset * (@gutterWidth + @columnWidth) + @totalWidth * @gutterWidth / 2;
+    }
+}

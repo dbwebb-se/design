@@ -1,0 +1,119 @@
+/** --------------------------------------------------------------
+ * Gallery ()
+ */
+
+/**
+ * Variables used in module
+ */
+@magicNumber: 24px;
+@gallery-width:             670px;
+@gallery-width-nav-gutter:  20px;
+@gallery-width-container:   @gallery-width - @gallery-width-nav-gutter*2 - 2;
+@gallery-width-container-1: (@gallery-width-container - 1*8*2) / 1;
+@gallery-width-container-2: (@gallery-width-container - 2*24*2) / 2;
+@gallery-width-container-3: (@gallery-width-container - 3*16*2) / 3;
+@gallery-width-container-4: (@gallery-width-container - 4*12*2) / 4;
+
+
+
+/**
+ * Settings for module
+ */
+.ly-gallery {
+
+  width: @gallery-width;
+  margin-bottom: @magicNumber;
+  color: #999;
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+      color: #666;
+    }
+  }
+}
+
+.ly-gallery-nav-left {
+  width: @gallery-width-nav-gutter; 
+  float: left; 
+  font-size: 24px;
+}
+
+.ly-gallery-nav-right{
+  width: @gallery-width-nav-gutter;
+  float: left;
+  font-size: 24px;
+  text-align: right;
+}
+
+.ly-gallery-nav-pages {
+  width: @gallery-width; 
+  clear: both; 
+  text-align: center;
+
+  .selected {
+    text-decoration: underline;
+    color: #000;
+  }
+}
+
+.ly-gallery-content {
+  width: @gallery-width - @gallery-width-nav-gutter * 2 - 2;
+  float: left; 
+  border: 1px solid #eee;
+}
+
+.ly-gallery {
+  .container {
+    float: left;
+
+    /*a {
+      border: 8px solid #fff;
+      display: inline-block;
+    
+      &:hover {
+        border-color: #eee;
+      }
+    }*/
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.ly-gallery.cols4 {
+  .container {
+    width: @gallery-width-container-4;
+    height: 152px;
+    margin: 12px;
+  }
+}
+
+.ly-gallery.cols3 {
+  .container {
+    width: @gallery-width-container-3;
+    height: 220px;
+    margin: 16px;
+  }
+}
+
+.ly-gallery.cols2 {
+  .container {
+    width: @gallery-width-container - 2;
+    height: 260px;
+    margin: 24px;
+  }
+}
+
+.ly-gallery.cols1 {
+  .container {
+    width: @gallery-width-container - 1;
+    min-height: 500px;
+    margin: 8px;
+  }
+}

@@ -1,0 +1,64 @@
+/** ------------------------------------------------------------------ 
+ * Mixins
+ */
+
+
+
+/** ------------------------------------------------------------------ 
+ * Typography. Calculate font-size and line-height.
+ */
+.body-font(@fontSize: 100.01%) {
+    //font: @font-size/@lineHeight @font-family-body;
+    font: @fontSize/@lineHeight @fontFamilyBody;
+}
+
+.font-size(@fontSize) {
+  font-size: @fontSize;
+}
+
+.font-size(@fontSize) when (@fontSize > 1) and (@fontSize*@fontSizeBody < @magicNumber) {
+  line-height: unit(@magicNumber/(@fontSize*@fontSizeBody)); 
+}
+
+.font-size(@fontSize) when (@fontSize > @magicNumber/@fontSizeBody) and (@fontSize*@fontSizeBody > @magicNumber) and (@fontSize*@fontSizeBody < @magicNumber*2) {
+  line-height: unit(@magicNumber*2/(@fontSize*@fontSizeBody)); 
+}
+
+// 5/4 for smaller font-size, incremental leading.
+
+
+/** ------------------------------------------------------------------ 
+ * Anchors.
+ */
+.anchor-none(@color: inherit) {
+  a {
+    color: @color;
+    text-decoration: none;
+  }
+}
+
+.anchorAnonymous(@color: inherit, @hover: @anchorColorHover) {
+    a {
+        color: @color;
+        text-decoration: none;
+
+        &:hover {
+            color: @hover;
+            text-decoration: underline;
+        }
+    }
+}
+
+.anchor(@color: inherit, @hover: inherit, @visited: inherit) {
+  a {
+    color: @color;
+    text-decoration: underline;
+    &:visited {
+      color: @visited;
+    }
+    &:hover {
+      color: @hover;
+      text-decoration: none;
+    }
+  }
+}

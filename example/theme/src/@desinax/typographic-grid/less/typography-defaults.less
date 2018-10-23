@@ -1,0 +1,413 @@
+/**
+ * Typographic defaults.
+ */
+@colorH1BorderBottom: #666;
+@colorH2BorderBottom: #CCC;
+@colorH3BorderBottom: #EEE;
+@borderSizeH1: 1px;
+@borderSizeH2: 1px;
+@borderSizeH3: 1px;
+
+@colorTypographyMark: #000;
+@bgColorTypographyMark:  #ff9;
+
+@colorBlockquoteBorder: #eee;
+@sizeBlockquoteBorder: 4px;
+
+@borderColorCodeInline: #ccc;
+@bgColorCodeInline:     #eee;
+@bgColorCodeBlock:      #eee;
+@colorCodeBlockBorder:  #ccc;
+@borderSizeCodeblock:   1px;
+
+@colorTableHeaderBorder:    #aaa;
+@sizeTableHeaderBorder:     2px;
+@bgColorTableStripe:        #fafafa;
+@colorTableRowBorder:       #ccc;
+@colorTableRowHover:        #000;
+@bgColorTableRowHover:      #f6f6f6;
+@colorTableRowBorderHover:  #666;
+
+@bgColorHr: #fff;
+
+
+
+#desinax-hgrid {
+
+
+    /**
+     * Headings
+     */
+    .typographyHeadings() {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: @fontFamilyHeadings;
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+
+            img {
+                margin: 0;
+            }
+        }
+
+        h1 {
+            #desinax-hgrid.fontSize(@fontSizeH1);
+
+            font-weight: normal;
+            border-bottom: @borderSizeH1 solid @colorH1BorderBottom;
+            margin-bottom: @magicNumber - @borderSizeH1;
+
+            // If header below h1, then assume larger margin top
+            & ~ h1,
+            & ~ h2,
+            & ~ h3,
+            & ~ h4,
+            & ~ h5,
+            & ~ h6 {
+                margin-top: @magicNumber * 2;
+            }
+
+            // Single margin when subheader follows directly
+            & + h2 {
+                margin-top: @magicNumber;
+            }
+        }
+
+        h2 {
+            #desinax-hgrid.fontSize(@fontSizeH2);
+
+            font-weight: normal;
+            margin-top: @magicNumber * 2;
+            margin-bottom: @magicNumber - @borderSizeH2;
+            border-bottom: @borderSizeH2 solid @colorH2BorderBottom;
+
+            & + h3 {
+                margin-top: @magicNumber;
+            }
+        }
+
+        h3 {
+            #desinax-hgrid.fontSize(@fontSizeH3);
+
+            font-weight: normal;
+            margin-top: @magicNumber * 2;
+            margin-bottom: @magicNumber - @borderSizeH3;
+            border-bottom: @borderSizeH3 solid @colorH3BorderBottom;
+        }
+
+        h4 {
+            #desinax-hgrid.fontSize(@fontSizeH4);
+
+            font-weight: normal;
+        }
+
+        h5 {
+            #desinax-hgrid.fontSize(@fontSizeH5);
+        }
+
+        h6 {
+            #desinax-hgrid.fontSize(@fontSizeH6);
+        }
+    }
+
+
+
+    /**
+     * Text elements
+     */
+    .typographyTextElements() {
+        p {
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+        }
+
+        small,
+        .small,
+        .smaller {
+            font-size: @fontSizeSmall;
+        }
+
+        strong,
+        b {
+            font-weight: bold;
+        }
+
+        mark {
+            color: @colorTypographyMark;
+            background-color: @bgColorTypographyMark;
+        }
+
+        abbr[title],
+        dfn[title] {
+            text-decoration: dotted underline;
+        }
+
+        em,
+        i,
+        dfn {
+            font-style: italic;
+        }
+
+        sub,
+        sup {
+            font-size: @fontSizeSupSub;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        blockquote {
+            border-left: @sizeBlockquoteBorder solid @colorBlockquoteBorder;
+            padding-left: 1em;
+            margin-left: 0;
+            margin-bottom: @magicNumber;
+        }
+    }
+
+
+
+    /**
+     * Display source code.
+     */
+    .typographyCodeElements() {
+        pre,
+        code,
+        kbd,
+        samp,
+        .code {
+            font-size: @fontSizeCodeInline;
+            font-family: @fontFamilyMonospace;
+        }
+
+        code,
+        samp {
+            border: 1px solid @borderColorCodeInline;
+        }
+
+        code {
+            background-color: @bgColorCodeInline;
+        }
+
+        pre,
+        div.code,
+        pre code {
+            font-size: @fontSizeCodeBlock;
+            line-height: @lineHeightCodeBlock;
+            white-space: pre;
+        }
+
+        pre {
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+        }
+
+        pre code {
+            display: block;
+            overflow: auto;
+        }
+
+        div.code,
+        pre code {
+            border-top: @borderSizeCodeblock solid @colorCodeBlockBorder;
+            border-bottom: @borderSizeCodeblock solid @colorCodeBlockBorder;
+            margin-top: @magicNumber - @borderSizeCodeblock;
+            margin-bottom: @magicNumber - @borderSizeCodeblock;
+            padding-top: @magicNumber / 2;
+            padding-bottom: @magicNumber / 2;
+            padding-left: 0.5em;
+            background-color: @bgColorCodeBlock;
+        }
+    }
+
+
+
+    /**
+     * Lists
+     */
+    .typographyListElements() {
+        //ul,ol{margin:0.6875em 1.5em 1.375em 0;padding-left:1.5em;}
+
+        ul,
+        ol {
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+            padding-left: 1.5em;
+
+            p {
+                margin-top: @magicNumber / 2;
+                margin-bottom: @magicNumber / 2;
+            }
+
+            & ul,
+            & ol {
+                margin: 0;
+            }
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        // dl dt dd
+        dl {
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+
+            &.horizontal {
+                @margin: 7em;
+
+                dt {
+                    clear: left;
+                    float: left;
+                    width: @margin;
+                }
+
+                dd {
+                    margin-left: @margin + 1em;
+                    display: block;
+                }
+            }
+        }
+
+        dt {
+            //font-weight: bold;
+        }
+
+        dd {
+            margin-left: 1.5em;
+        }
+    }
+
+
+
+    /**
+     * Tables. Because of the need for padding on TH and TD, the vertical rhythm
+     * on table cells has to be 1.5*@magic-number.
+     */
+    .typographyTableElements() {
+        article table,
+        .table,
+        .table1,
+        .table2 {
+            margin-top: @magicNumber;
+            margin-bottom: @magicNumber;
+        }
+
+        table.full-width,
+        article .table,
+        .table,
+        .table2 {
+            width: 100%;
+        }
+
+        // A more styled table layout
+        article table,
+        .table,
+        .table2 {
+            border-collapse: collapse;
+
+            caption {
+                #desinax-hgrid.fontSize(@fontSizeSmall);
+
+                text-align: left;
+                font-style: italic;
+            }
+
+            thead {
+                box-shadow: 0 1px 0 @colorTableHeaderBorder;
+            }
+
+            th {
+                vertical-align: bottom;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            th,
+            td {
+                padding: @magicNumber / 4;
+            }
+
+            tr {
+                box-shadow: 0 1px 0 @colorTableRowBorder;
+
+                &:hover {
+                    color: @colorTableRowHover;
+                    background-color: @bgColorTableRowHover;
+                    box-shadow: 0 1px 0 @colorTableRowBorderHover;
+                }
+            }
+
+            /*
+            tfoot {
+            }
+            */
+        }
+
+        // Stripe each even row in table
+        table.striped {
+            tbody {
+                tr:nth-child(even) td,
+                tr.even td {
+                    background-color: @bgColorTableStripe;
+                }
+            }
+        }
+    }
+
+
+
+    /**
+     * More typography elements
+     */
+    .typographyOtherElements() {
+        hr {
+            position: relative;
+            top: -2px;
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            margin-top: 1.5 * @magicNumber - 1px;
+            margin-bottom: 1.5 * @magicNumber;
+
+            &::after {
+                content: "§";
+                position: relative;
+                top: -0.7em;
+                left: 50%;
+                padding: 0 0.25em;
+                background-color: @bgColorHr;
+            }
+        }
+    }
+
+
+
+    /**
+     * Enable all default typographic elements.
+     */
+     .activateDefaultTypography() {
+         #desinax-hgrid.typographyHeadings();
+         #desinax-hgrid.typographyTextElements();
+         #desinax-hgrid.typographyCodeElements();
+         #desinax-hgrid.typographyListElements();
+         #desinax-hgrid.typographyTableElements();
+         #desinax-hgrid.typographyOtherElements();
+     }
+}

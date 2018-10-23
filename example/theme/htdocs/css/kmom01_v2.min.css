@@ -1,0 +1,7 @@
+/*!
+ * LESS version of the stylesheet for design kmom01.
+ *
+ * This stylesheet is for the design course and kmom01. Its intention is to
+ * use kmom01.css and lessify the style and use this as a wrapper for the new
+ * style.
+ */html{overflow-y:scroll;background-color:#424242}body{margin:0;padding:0;color:#333;background-color:#fff;font:100.01%/1 serif}.inner-wrap{max-width:1100px;margin:0 auto}@media screen and (max-width:1500px){.site-logo{display:none}}.regions .outer-wrap{background-color:#F4E3C9;border:1px solid #e3b774}.regions .inner-wrap{background-color:#F4E0E9;border:1px solid #d995b4}.regions .region-after-main,.regions .region-breadcrumb,.regions .region-columns-above,.regions .region-columns-below,.regions .region-flash,.regions .region-flash-message,.regions .region-footer,.regions .region-footer-column-1,.regions .region-footer-column-2,.regions .region-footer-column-3,.regions .region-header-col-1,.regions .region-header-col-2,.regions .region-header-col-3,.regions .region-main,.regions .region-sidebar-left,.regions .region-sidebar-right{background-color:#B5DCE1;border:1px solid #6cbac4;color:#111}
