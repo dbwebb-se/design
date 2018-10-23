@@ -12,6 +12,13 @@ Använd @import.
 
 
 
+Templatefiler
+-------------------------
+
+Berätta om templatefiler, vad de finns och om man kan redigera i dem.
+
+
+
 Välj en layout
 -------------------------
 

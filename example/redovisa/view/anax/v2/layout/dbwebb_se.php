@@ -19,7 +19,6 @@ $bodyClass = $bodyClass ?? null;
 
 // Set active stylesheet
 $request = $di->get("request");
-$response = $di->get("response");
 $session = $di->get("session");
 if ($request->getGet("style")) {
     $session->set("redirect", currentUrl());
@@ -34,11 +33,16 @@ if ($activeStyle) {
 }
 
 // Get hgrid & vgrid
-if ($request->getGet("hgrid")) {
+if ($request->hasGet("hgrid")) {
     $htmlClass[] = "hgrid";
 }
-if ($request->getGet("vgrid")) {
+if ($request->hasGet("vgrid")) {
     $htmlClass[] = "vgrid";
+}
+
+// Show regions
+if ($request->hasGet("regions")) {
+    $htmlClass[] = "regions";
 }
 
 // Get flash message if any and add to region flash-message
