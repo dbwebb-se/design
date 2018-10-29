@@ -18,6 +18,7 @@
 
 -./me/kmom10/*
 
+-./example/theme/*
 -./*/redovisa/*
 -./*/*/vendor/*
 -./*/*/node_modules/*
