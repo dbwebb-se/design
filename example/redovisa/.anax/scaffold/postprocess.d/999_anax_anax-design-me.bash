@@ -13,7 +13,7 @@ rsync -a vendor/anax/anax-design-me/config ./
 rsync -a vendor/anax/anax-design-me/content ./
 
 # Remove items from content/.
-rm -f content/about.md
+rm -f content/{about,test}.md
 
 # Get items from htdocs/.
 rsync -a vendor/anax/anax-design-me/htdocs ./
