@@ -23,6 +23,9 @@ rm htdocs/css/style.css
 rm -rf src/Controller
 rsync -a vendor/anax/anax-design-me/src ./
 
+# Remove phpunit tests.
+rm -rf .phpunit.xml test/
+
 # Get the Makefile.
 rsync -a vendor/anax/anax-design-me/Makefile ./
 
