@@ -1,0 +1,16 @@
+{
+  "name": "compile-less",
+  "version": "1.0.0",
+  "description": "Example program to test the less compiler.",
+  "scripts": {
+    "build": "node_modules/.bin/lessc style.less style.css && node_modules/.bin/lessc --clean-css style.less style.min.css",
+    "clean": "rm -rf node_modules package-lock.json",
+    "test": "node_modules/.bin/lessc --lint style.less"
+  },
+  "author": "Mikael Roos, mos@dbwebb.se",
+  "license": "MIT",
+  "dependencies": {
+    "less": "^3.8.1",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+}
