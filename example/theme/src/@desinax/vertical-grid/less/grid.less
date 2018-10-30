@@ -9,20 +9,6 @@
 
 
 
-// /**
-//  * A small clearfix:
-//  * http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
-//  */
-// .clearfix() {
-//     &::after {
-//         content: "";
-//         display: block;
-//         clear: both;
-//     }
-// }
-
-
-
 /**
  * Namespace what could be namespaced
  */
@@ -50,11 +36,11 @@
     /**
      * Show grid.
      */
-    .showGrid(@maxWidth, @gridImage) {
-        background: url("@{gridImage}") repeat-y fixed center center;
+    .showGrid(@gridImage, @maxWidth: 100%) {
+        background: url("@{gridImage}") repeat-y scroll center center;
         background-size: 100% auto;
-
-        @media (min-width: @maxWidth) {
+        
+        @media (min-width: @maxWidth + 0px) {
             background-size: @maxWidth auto;
         }
     }

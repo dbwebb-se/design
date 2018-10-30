@@ -183,7 +183,7 @@ modules-desinax-install:
 			&& $(ECHO) "Module not installed, skipping it." \
 			&& continue;                      \
 		install -d ../src/$$module;           \
-		rsync -av $$module/src/ ../src/$$module/; \
+		rsync -av --delete $$module/src/ ../src/$$module/; \
 		rsync -a $$module/README.md ../src/$$module/; \
 		rsync -a $$module/REVISION.md ../src/$$module/; \
 		rsync -a $$module/LICENSE ../src/$$module/; \
@@ -198,12 +198,12 @@ modules-install: modules-desinax-install
 
 	# Normalize.css
 	npm install normalize.css
-	rsync -av --exclude package.json node_modules/normalize.css src/
+	rsync -av --exclude package.json --delete node_modules/normalize.css src/
 	rsync -av src/normalize.css/normalize.css src/normalize.css/normalize.less
 
 	# Font Awesome
 	npm install @fortawesome/fontawesome-free
-	rsync -av --exclude package.json node_modules/@fortawesome/fontawesome-free src/@fortawesome/
+	rsync -av --exclude package.json --delete node_modules/@fortawesome/fontawesome-free src/@fortawesome/
 
 
 

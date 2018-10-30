@@ -1,0 +1,57 @@
+language: node_js
+
+node_js:
+    - "node"
+    #- "7"
+    #- "6"
+    #- "5"
+    #- "4"
+    #- "iojs"
+    #- "4.1"
+    #- "0.12"
+    #- "0.11"
+    #- "0.10"
+
+
+
+sudo: false
+
+
+
+git:
+    submodules: false
+
+
+
+addons:
+    apt:
+        packages:
+            #- php-codesniffer
+            #- phpmd
+            #- shellcheck
+
+
+
+before_script:
+    - make install
+
+
+
+script:
+    - make test
+
+
+
+notifications:
+    webhooks:
+        urls:
+            # desinax/dev
+            - https://webhooks.gitter.im/e/cfe9d5af114f67125ae2
+
+        # # desinax/module
+        # - https://webhooks.gitter.im/e/cfe9d5af114f67125ae2
+
+        # options: [always|never|change] default: always
+        on_success: change
+        on_failure: always
+        on_start: never

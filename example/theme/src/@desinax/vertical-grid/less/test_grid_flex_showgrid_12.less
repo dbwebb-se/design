@@ -1,0 +1,19 @@
+/**
+ * Style implementing 12 column grid using flex and adding a showgrid.
+ */
+@import "test_grid_flex_showgrid.less";
+
+@columnWidth:   60;
+@gutterWidth:   20;
+@columns:       12;
+
+.vgrid .inner-wrap {
+    //@gridImage: "../../img/grid_24x30x10-nomargin.png";
+    @gridImage: "../../img/grid_12x60x20-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}

@@ -1,0 +1,80 @@
+/**
+ * Style implementing the default grid using float.
+ *
+ * The style is used by the html files in htdocs/ to test the grid
+ * constructs.
+ */
+@import "grid.less";
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+@gridType:      "float"; // "flex"
+
+.row {
+    #desinax-vgrid.row();
+    background-color: darken(#0f0, 20%);
+    margin-bottom: 12px;
+}
+
+.header1,
+.header2 {
+    #desinax-vgrid.column(@columns / 2);
+}
+
+.flash {
+    #desinax-vgrid.column(@columns - 4);
+    #desinax-vgrid.push(2);
+}
+
+.sidebar-left,
+.sidebar-right {
+    #desinax-vgrid.column(@columns / 4);
+}
+
+.main {
+    #desinax-vgrid.column(@columns / 2);
+}
+
+.footer {
+    #desinax-vgrid.column(@columns);
+}
+
+.region {
+    height: 80px;
+    background-color: lighten(#0f0, 20%);
+    margin-bottom: 1px;
+}
+
+
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+}
+
+.inner-wrap-header,
+.inner-wrap-footer {
+    #desinax-vgrid.grid(100%);
+}
+
+@media screen and (max-width: 700px) {
+    .flash {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        #desinax-vgrid.column(@columns / 2);
+    }
+
+    .main {
+        #desinax-vgrid.column(@columns / 2);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar-left,
+    .sidebar-right,
+    .main {
+        #desinax-vgrid.column(@columns);
+    }
+}

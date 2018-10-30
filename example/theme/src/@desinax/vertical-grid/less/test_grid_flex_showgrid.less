@@ -1,0 +1,27 @@
+/**
+ * Style implementing the default grid using float and adding a showgrid.
+ */
+@import "test_grid_flex.less";
+
+.row {
+    // Add some style to make it easier to see the structure of the grid
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: transparent;
+}
+
+.region {
+    // Add some style to make it easier to see the structure of the grid
+    opacity: 0.5;
+}
+
+.vgrid .inner-wrap {
+    @gridImage: "../../img/grid_24x30x10-nomargin.png";
+    //@gridImage: "../../img/grid_12x60x20-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
