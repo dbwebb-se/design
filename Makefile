@@ -1,11 +1,11 @@
-#!/usr/bin/env make -f
+#!/usr/bin/env make
 #
-# Makefile for course repos
-#
+# Course repo, to work with a dbwebb course.
+# See organisation on GitHub: https://github.com/dbwebb-se
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
-# General setup
+# General stuff, reusable for all Makefiles.
 #
 
 # Detect OS
@@ -26,31 +26,44 @@ OK_COLOR	= \033[32;01m
 ERROR_COLOR	= \033[31;01m
 WARN_COLOR	= \033[33;01m
 
+# Print out colored action message
+ACTION_MESSAGE = $(ECHO) "$(ACTION)---> $(1)$(NO_COLOR)"
+
 # Which makefile am I in?
-WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+WHERE-AM-I = "$(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))"
 THIS_MAKEFILE := $(call WHERE-AM-I)
 
 # Echo some nice helptext based on the target comment
-HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
+HELPTEXT = $(call ACTION_MESSAGE, $(shell egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"))
 
-# target: help                    - Displays help with targets available.
+# Check version  and path to command and display on one line
+CHECK_VERSION = printf "%-15s %-13s %s\n" "`basename $(1)`" "`$(1) --version $(2)`" "`which $(1)`"
+
+# Get current working directory, it may not exist as environment variable.
+PWD = $(shell pwd)
+
+# target: help                    - Displays help.
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
-	@echo "Usage:"
-	@echo " make [target] ..."
-	@echo "target:"
-	@egrep "^# target:" Makefile | sed 's/# target: / /g'
+	@sed '/^$$/q' $(THIS_MAKEFILE) | tail +3 | sed 's/#\s*//g'
+	@$(ECHO) "Usage:"
+	@$(ECHO) " make [target] ..."
+	@$(ECHO) "target:"
+	@egrep "^# target:" $(THIS_MAKEFILE) | sed 's/# target: / /g'
 
 
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
-# Specifics
-# 
+# Specifics for this project.
+#
+# Default values for arguments
+container ?= cli
 
 # Add local bin path for test tools
-PATH := "$(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)"
+PATH := $(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)
+SHELL := env PATH='$(PATH)' $(SHELL)
 
 # Tools
 DBWEBB   		:= bin/dbwebb
@@ -62,8 +75,8 @@ PHPMD   := bin/phpmd
 
 
 # ----------------------------------------------------------------------------
-# 
-# Highlevel targets 
+#
+# Highlevel targets
 #
 # target: prepare                 - Prepare the build directory.
 .PHONY: prepare
@@ -82,10 +95,11 @@ install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install n
 	@# Disable PHP tools with arguments
 	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
 
-	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	# curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	curl -Lso $(PHPMD) http://www.student.bth.se/~mosstud/download/phpmd && chmod 755 $(PHPMD)
 
-	@# Shellcheck 
-	@# tree (inspect) 
+	@# Shellcheck
+	@# tree (inspect)
 	@# python through reqs and venv
 	@# Add to check on dbwebb-cli to try all parts php in path, make, composer, node, npm, python3, python, mm.
 
@@ -93,14 +107,22 @@ install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install n
 
 # target: check                   - Check installed utilities.
 .PHONY: check
-check: dbwebb-validate-check
+check: dbwebb-validate-check docker-check
 	@$(call HELPTEXT,$@)
+	@$(call CHECK_VERSION, make, | head -1)
 
 
 
-# target: test                    - Install test tools & run tests.
+# target: test                    - Run tests.
 .PHONY: test
-test: check dbwebb-publish-example dbwebb-testrepo
+test: dbwebb-publish-example dbwebb-testrepo
+	@$(call HELPTEXT,$@)
+	[ -f composer.json ] || composer validate
+
+
+# target: testrepo                - Runs unit tests on course repo.
+.PHONY: testrepo
+testrepo: dbwebb-testrepo
 	@$(call HELPTEXT,$@)
 
 
@@ -127,14 +149,15 @@ clean-me:
 clean-all: clean
 	@$(call HELPTEXT,$@)
 	rm -rf bin
-	rm -rf node_modules
-	rm -rf vendor
+	rm -rf node_modules package-lock.json
+	rm -rf vendor composer.lock
+	rm -rf .venv
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# Shortcuts for frequent usage 
+#
+# Shortcuts for frequent usage
 #
 # target: validate                - Execute dbwebb validate what=part-to-validate.
 .PHONY: validate
@@ -158,14 +181,14 @@ inspect: dbwebb-inspect
 
 
 # ----------------------------------------------------------------------------
-# 
-# Python 
+#
+# Python
 #
 # target: python-install          - Install Python utilities locally.
 .PHONY: python-install
 python-install: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f .requirements.txt ] || python3 -m pip install --requirement .requirements.txt 
+	[ ! -f .requirements.txt ] || python3 -m pip install --requirement .requirements.txt
 
 
 
@@ -173,7 +196,7 @@ python-install: prepare
 .PHONY: python-upgrade
 python-upgrade: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f .requirements.txt ] || python3 -m pip install --upgrade --requirement .requirements.txt 
+	[ ! -f .requirements.txt ] || python3 -m pip install --upgrade --requirement .requirements.txt
 
 
 
@@ -181,13 +204,13 @@ python-upgrade: prepare
 .PHONY: python-venv
 python-venv:
 	@$(call HELPTEXT,$@)
-	python3 -m venv .venv 
+	python3 -m venv .venv
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# dbwebb cli 
+#
+# dbwebb cli
 #
 # target: dbwebb-install          - Download and install dbwebb-cli.
 .PHONY: dbwebb-install
@@ -196,8 +219,8 @@ dbwebb-install: prepare
 	wget --quiet -O $(DBWEBB) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2
 	chmod 755 $(DBWEBB)
 	$(DBWEBB) config create noinput
-	(cd bin; rm dbwebb-validate1; ln -s dbwebb-validate dbwebb-validate1)
-	(cd bin; rm dbwebb-inspect1; ln -s dbwebb-inspect dbwebb-inspect1)
+	(cd bin; rm -f dbwebb-validate1; cp dbwebb-validate dbwebb-validate1)
+	(cd bin; rm -f dbwebb-inspect1; cp dbwebb-inspect dbwebb-inspect1)
 
 
 
@@ -205,12 +228,12 @@ dbwebb-install: prepare
 .PHONY: dbwebb-testrepo
 dbwebb-testrepo:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB) --silent --local testrepo
+	env PATH='$(PATH)' $(DBWEBB) --silent --local testrepo
 
 
 
 # ----------------------------------------------------------------------------
-# 
+#
 # dbwebb validate & publish
 #
 # target: dbwebb-validate-install - Download and install dbwebb-validate.
@@ -226,7 +249,7 @@ dbwebb-validate-install: prepare
 .PHONY: dbwebb-validate-check
 dbwebb-validate-check:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --check
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --check
 
 
 
@@ -234,7 +257,7 @@ dbwebb-validate-check:
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(options) $(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) $(options) $(what)
 
 
 
@@ -242,20 +265,29 @@ dbwebb-validate:
 .PHONY: dbwebb-publish
 dbwebb-publish: prepare
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
 
 
-# target: dbwebb-publish-example  - Execute dbwebb publish /example ro build/webroot
+# target: dbwebb-publishpure      - Execute dbwebb publishpure options="" what=part-to-validate-publish.
+.PHONY: dbwebb-publishpure
+dbwebb-publishpure: prepare
+	@$(call HELPTEXT,$@)
+	install -d build/webroot/$(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/$(what) --publish-root . --no-validate --no-minification $(options) $(what)
+
+
+
+# target: dbwebb-publish-example  - Execute dbwebb publish /example to build/webroot
 .PHONY: dbwebb-publish-example
 dbwebb-publish-example: prepare
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) example
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) example
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# dbwebb inspect 
+#
+# dbwebb inspect
 #
 # target: dbwebb-inspect-install  - Download and install dbwebb-inspect.
 .PHONY: dbwebb-inspect-install
@@ -278,19 +310,19 @@ dbwebb-inspect-check:
 .PHONY: dbwebb-inspect
 dbwebb-inspect:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) $(options) . $(what)
+	env PATH='$(PATH)' $(DBWEBB_INSPECT) $(options) . $(what)
 
 
 
 # ----------------------------------------------------------------------------
-# 
+#
 # npm
 #
 # target: npm-install             - Install npm packages for development.
 .PHONY: npm-install
 npm-install: prepare
 	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm install --only=dev; fi
+	[ ! -f package.json ] || npm install
 
 
 
@@ -298,19 +330,19 @@ npm-install: prepare
 .PHONY: npm-update
 npm-update:
 	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm update --only=dev; fi
+	[ ! -f package.json ] || npm update
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# composer 
+#
+# composer
 #
 # target: composer-install        - Install composer packages for development.
 .PHONY: composer-install
 composer-install: prepare
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; then composer install; fi
+	[ ! -f composer.json ] || composer install
 
 
 
@@ -318,4 +350,113 @@ composer-install: prepare
 .PHONY: composer-update
 composer-update:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; composer update; fi
+	[ ! -f composer.json ] || composer update
+
+
+
+# ----------------------------------------------------------------------------
+#
+# docker
+#
+# target: docker-up               - Start all docker container="", or specific, default "latest".
+.PHONY: docker-up
+docker-up:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml up -d $(container)
+
+
+
+# target: docker-stop             - Stop running docker containers.
+.PHONY: docker-stop
+docker-stop:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml stop
+
+
+
+# target: docker-run              - Run container="" with what="" one off command.
+.PHONY: docker-run
+docker-run:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) $(what)
+
+
+
+# target: docker-bash             - Run container="" with what="bash" one off command.
+.PHONY: docker-bash
+docker-bash:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) bash
+
+
+
+# target: docker-exec             - Run container="" with what="" command in running container.
+.PHONY: docker-exec
+docker-exec:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml exec $(container) $(what)
+
+
+
+# target: docker-install          - Run make install in container="".
+.PHONY: docker-install
+docker-install:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make install
+
+
+
+# target: docker-test             - Run "make test" in container="".
+.PHONY: docker-test
+docker-test:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make test
+
+
+
+# target: docker-test-clean       - Run make clean-me test in docker.
+.PHONY: docker-test-clean
+docker-test-clean:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make clean-me test
+
+
+
+# target: docker-validate         - Run dbwebb validate what="" in docker.
+.PHONY: docker-validate
+docker-validate:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make validate options="$(options)" what="$(what)"
+
+
+
+# target: docker-publish          - Run dbwebb publish what="" in docker.
+.PHONY: docker-publish
+docker-publish:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make publish options="$(options)" what="$(what)"
+
+
+
+# target: docker-publish-me       - Run dbwebb publishpure what="me" in docker.
+.PHONY: docker-publish-me
+docker-publish-me:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make dbwebb-publishpure options="$(options)" what="me"
+
+
+
+# target: docker-publish-example  - Run dbwebb publishpure what="example" in docker.
+.PHONY: docker-publish-example
+docker-publish-example:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make dbwebb-publishpure options="$(options)" what="example"
+
+
+
+# target: docker-check            - Check versions of docker.
+.PHONY: docker-check
+docker-check:
+	@$(call HELPTEXT,$@)
+	@$(call CHECK_VERSION, docker, | cut -d" " -f3)
+	@$(call CHECK_VERSION, docker-compose, | cut -d" " -f3)
