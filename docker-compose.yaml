@@ -1,0 +1,68 @@
+version: "3"
+services:
+    # Using anax/dev
+    php73:
+        image: anax/dev:php73
+        volumes: [ ".:/home/anax/repo" ]
+    php73-apache:
+        image: anax/dev:php73-apache
+        ports: [ "10073:80" ]
+        volumes: [ ".:/home/anax/repo" ]
+
+    # Complete course repos
+    course-databas:
+        image: dbwebb/courserepo:databas
+        ports: [ "10042:80" ]
+    course-oophp:
+        image: dbwebb/courserepo:oophp
+        ports: [ "10042:80" ]
+
+    # Course repo
+    cli:
+        image: dbwebb/courserepo:cli
+        volumes: [ ".:/home/dbwebb/repo" ]
+    course:
+        image: dbwebb/courserepo
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    web:
+        image: dbwebb/courserepo:web
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    apache:
+        image: dbwebb/courserepo:apache
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+
+    # Base images
+    base-all:
+        image: dbwebb/courserepo:base-all
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    base-apache:
+        image: dbwebb/courserepo:base-apache
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    base-php:
+        image: dbwebb/courserepo:base-php
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base-python:
+        image: dbwebb/courserepo:base-python
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base-node:
+        image: dbwebb/courserepo:base-node
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base:
+        image: dbwebb/courserepo:base
+        volumes: [ ".:/home/dbwebb/repo" ]
+
+    # Debian installations
+    jessie:
+        image: dbwebb/courserepo:jessie
+        volumes: [ ".:/home/dbwebb/repo" ]
+    stretch:
+        image: dbwebb/courserepo:stretch
+        volumes: [ ".:/home/dbwebb/repo" ]
+    buster:
+        image: dbwebb/courserepo:buster
+        volumes: [ ".:/home/dbwebb/repo" ]
