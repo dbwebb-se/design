@@ -1,0 +1,19 @@
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.row-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
