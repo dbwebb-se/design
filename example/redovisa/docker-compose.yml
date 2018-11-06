@@ -1,6 +1,9 @@
 version: "3"
 services:
-    website:
-        image: anax/dev:latest-apache
+    cli:
+        image: anax/dev:cli
+        volumes: [ ".:/home/anax/repo" ]
+    web:
+        image: anax/dev:apache
         volumes: [ ".:/home/anax/repo" ]
         ports: [ "10099:80" ]
