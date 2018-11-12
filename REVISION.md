@@ -2,6 +2,13 @@ Revision history
 ===================
 
 
+v2.0.3 (2018-11-12)
+-------------------
+
+* Publish kmom03, including minor fixes from test.
+
+
+
 v2.0.2 (2018-11-12)
 -------------------
 
