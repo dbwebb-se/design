@@ -44,7 +44,13 @@ function main
     [ -d "$to" ] || die "Missing directory '$to'"
 
     # theme/
-    rsync -av "$from/" "$to/"
+    rsync -av \
+        --exclude REVISION.md \
+        --exclude htdocs/css/ \
+        --exclude package.json \
+        --exclude src/kmom01_v2.less \
+        "$from/" "$to/"
+
 
     # delete stray files in some parts.
     local parts="src/@desinax/typographic-grid"
