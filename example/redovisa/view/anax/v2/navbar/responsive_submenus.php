@@ -13,7 +13,7 @@ $navbar = new \Anax\Navigation\Navbar();
 $navbar->setDI($di);
 $html = $navbar->createMenuWithSubMenus($navbarConfig);
 
-$classes = "rm-navbar-max rm-navbar rm-max rm-swipe-right " . ( $class ?? null); 
+$classes = "rm-navbar-max rm-navbar rm-max rm-swipe-right " . ( $class ?? null);
 
 
 ?><!-- menu wrapper -->

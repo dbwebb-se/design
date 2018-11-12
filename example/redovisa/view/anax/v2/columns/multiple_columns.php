@@ -25,22 +25,26 @@ $classes = isset($classes) ? $classes : null;
 <?php endif; ?>
 
 
-<?php $i = 1; foreach ($columns as $column) : 
-    $template = isset($column["template"])
-        ? $column["template"]
-        : __DIR__ . "/../block/default";
-?>
+<?php $i = 1; foreach ($columns as $column) :
+        $template = isset($column["template"])
+            ? $column["template"]
+            : __DIR__ . "/../block/default";
+    ?>
+
     <div <?= classList("column $outerClass") ?>>
 
-        <?php 
+        <?php
         $column["classes"] = ["$outerClass-x", "$outerClass-$i"];
         $data = isset($column["data"])
             ? $column["data"]
             : $column;
         renderView($template, $data);
-         ?>
+        ?>
 
     </div>
-<?php $i++; endforeach; ?>
+
+    <?php
+    $i++;
+endforeach; ?>
 
 </div>

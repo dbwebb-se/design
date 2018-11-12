@@ -1,48 +1,25 @@
 language: php
 
 php:
-    #- 5.6
-    #- "7.0"
-    #- "7.1"
     - "7.2"
     - hhvm
     - nightly
-
-
 
 matrix:
     allow_failures:
         - php: nightly
         - php: hhvm
 
-
-
 sudo: false
-
-
 
 git:
     submodules: false
 
-
-
-addons:
-    apt:
-        packages:
-            #- php-codesniffer
-            #- phpmd
-            #- shellcheck
-
-
-
 before_script:
     - make install check
 
-
 script:
     - make test
-
-
 
 # notifications:
 #     irc: "irc.freenode.org#dbwebb"

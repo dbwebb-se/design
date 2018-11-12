@@ -31,6 +31,9 @@ function main
     rsync -av $from/content/verktyg $to/content/
     rm -f $to/content/verktyg/999_att-gora.md
 
+    # view files were updated with codestyle, ignoring them
+    #rsync -av $from/view $to/
+
     # theme/Makefile && theme/src && theme/htdocs && htdocs/webfonts
     
 }

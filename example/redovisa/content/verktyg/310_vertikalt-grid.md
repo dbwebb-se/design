@@ -12,6 +12,8 @@ Du kan klicka på länken [som visar denna sida med dess grid](verktyg/vertikalt
 
 Du kan visa gridet för godtycklig sida genom att lägga till `?vgrid` i slutet av sidans länk.
 
+När du gör det kommer layouten att lägga till en html-klass för `vgrid` och den används för att visa den bakgrundsbild som används för att visa gridet.
+
 
 
 Kolumner och mellanrum

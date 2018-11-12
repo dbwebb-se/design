@@ -133,7 +133,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
     <div class="inner-wrap inner-wrap-navbar">
         <div class="row">
             <nav class="region-navbar" role="navigation">
-                <?php renderRegion("navbar")?>
+                <?php renderRegion("navbar") ?>
             </nav>
         </div>
     </div>
@@ -148,7 +148,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
     <div class="inner-wrap inner-wrap-flash">
         <div class="row">
             <div class="region-flash">
-                <?php renderRegion("flash")?>
+                <?php renderRegion("flash") ?>
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
     <div class="inner-wrap inner-wrap-breadcrumb">
         <div class="row">
             <div class="region-breadcrumb">
-                <?php renderRegion("breadcrumb")?>
+                <?php renderRegion("breadcrumb") ?>
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
     <div class="inner-wrap inner-wrap-flash-message">
         <div class="row">
             <div class="region-flash-message">
-                <?php renderRegion("flash-message")?>
+                <?php renderRegion("flash-message") ?>
             </div>
         </div>
     </div>
@@ -193,7 +193,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
     <div class="inner-wrap inner-wrap-columns-above">
         <div class="row">
             <div class="region-columns-above">
-                <?php renderRegion("columns-above")?>
+                <?php renderRegion("columns-above") ?>
             </div>
         </div>
     </div>
@@ -216,21 +216,21 @@ $class .= $sidebarRight ? "has-sidebar-right " : "";
 $class .= empty($class) ? "" : "has-sidebar";
 ?>
 
-            <?php if ($sidebarLeft): ?>
+            <?php if ($sidebarLeft) : ?>
             <div class="wrap-sidebar region-sidebar-left <?= $class ?>" role="complementary">
-                <?php renderRegion("sidebar-left")?>
+                <?php renderRegion("sidebar-left") ?>
             </div>
             <?php endif; ?>
 
-            <?php if (regionHasContent("main")): ?>
+            <?php if (regionHasContent("main")) : ?>
             <main class="region-main <?= $class ?>" role="main">
-                <?php renderRegion("main")?>
+                <?php renderRegion("main") ?>
             </main>
             <?php endif; ?>
 
-            <?php if ($sidebarRight): ?>
+            <?php if ($sidebarRight) : ?>
             <div class="wrap-sidebar region-sidebar-right <?= $class ?>" role="complementary">
-                <?php renderRegion("sidebar-right")?>
+                <?php renderRegion("sidebar-right") ?>
             </div>
             <?php endif; ?>
 
@@ -246,7 +246,7 @@ $class .= empty($class) ? "" : "has-sidebar";
     <div class="inner-wrap inner-wrap-after-main">
         <div class="row">
             <div class="region-after-main">
-                <?php renderRegion("after-main")?>
+                <?php renderRegion("after-main") ?>
             </div>
         </div>
     </div>
@@ -261,7 +261,7 @@ $class .= empty($class) ? "" : "has-sidebar";
     <div class="inner-wrap inner-wrap-columns-below">
         <div class="row">
             <div class="region-columns-below">
-                <?php renderRegion("columns-below")?>
+                <?php renderRegion("columns-below") ?>
             </div>
         </div>
     </div>
@@ -276,7 +276,7 @@ $class .= empty($class) ? "" : "has-sidebar";
     <div class="inner-wrap inner-wrap-footer">
         <div class="row">
             <div class="region-footer">
-                <?php renderRegion("footer")?>
+                <?php renderRegion("footer") ?>
             </div>
         </div>
     </div>
@@ -299,7 +299,7 @@ $class .= empty($class) ? "" : "has-sidebar";
 
 <!-- useful for inline javascripts such as google analytics-->
 <?php if (regionHasContent("body-end")) : ?>
-<?php renderRegion("body-end")?>
+    <?php renderRegion("body-end") ?>
 <?php endif; ?>
 
 </body>
