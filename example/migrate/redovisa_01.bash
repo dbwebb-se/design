@@ -28,7 +28,11 @@ function main
     [ -d $to ] || die "Missing directory '$to'"
 
     # content/verktyg
-    rsync -av $from/content/verktyg $to/content/ 
+    rsync -av $from/content/verktyg $to/content/
+    rm -f $to/content/verktyg/999_att-gora.md
+
+    # theme/Makefile && theme/src && theme/htdocs && htdocs/webfonts
+    
 }
 
 main
