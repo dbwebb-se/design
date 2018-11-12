@@ -30,10 +30,10 @@
     "@desinax/link": "^1.0.1",
     "@desinax/mixin": "^1.0.2",
     "@desinax/responsive-menu": "^1.1.4",
-    "@desinax/typographic-grid": "^1.0.2",
+    "@desinax/typographic-grid": "^1.1.1",
     "@desinax/vertical-grid": "^1.0.3",
-    "@fortawesome/fontawesome-free": "^5.4.2",
-    "normalize.css": "^8.0.0"
+    "@fortawesome/fontawesome-free": "^5.5.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@desinax/css-styleguide": "^1.0.0",

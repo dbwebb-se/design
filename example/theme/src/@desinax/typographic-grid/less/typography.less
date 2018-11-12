@@ -1,29 +1,28 @@
 /**
  * Import the parts making up the typographic grid.
  */
-@import "typography-font-families.less";
-@import "typography-sizes.less";
-@import "typography-mixins.less";
-@import "typography-defaults.less";
+@import "src/less/typography-font-families.less";
+@import "src/less/typography-defaults.less";
 
-/**
- * Activate default settings for fonts.
- */
-
-/*
-.inner-wrap-main {
-    //background-image: url(/img/grid/horisontal-grid-22.png);
-    //background-image: url(/img/grid/horisontal-grid-24.png);
-}
-
-body {
-    #hgrid .font();
-}
-
-.typographyHeadings();
-.typographyTextElements();
-.typographyCodeElements();
-.typographyListElements();
-.typographyTableElements();
-.typographyOtherElements();
-*/
+// // Magic number and default fontsize, together makes up base lineheight
+// @magicNumber:  24px;
+// @fontSizeBody: 16px;
+// 
+// // Set font family to use
+// @fontFamilyHeadings:  @fontFamilyCambria;
+// @fontFamilyBody:      @fontFamilyCalibri;
+// @fontFamilyCode:      @fontFamilyCourier;
+// 
+// // Activate the grid base font
+// body {
+//     #desinax-hgrid.font(@fontSizeBody);
+// }
+// 
+// // Activate grid and affect all typographic elements
+// #desinax-hgrid.activateDefaultTypography();
+// 
+// // Show the grid
+// .hgrid .wrap {
+//     @gridImage: "../../img/magic-number-@{magicNumber}.png";
+//     #desinax-hgrid.showGrid(@gridImage);
+// }

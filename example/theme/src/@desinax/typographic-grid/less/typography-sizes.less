@@ -1,32 +1,8 @@
 /**
- * Typographic sizes for horisontal rythm.
+ * These are the basis for calculating the rytm.
+ *   @lineHeight: (unit(@magicNumber) / unit(@fontSizeBody));
+ *   @magicNumber = @fontSizeBody * @lineHeight
  */
-
-/**
- * Magic number for vertical rythm
- * @magicNumber = @fontSizeBody * @lineHeight
- */
-@magicNumber:   24px; /* 16px - 100%/1.5 */
-//@magicNumber:   22px; /* 16px - 100%/1.375 */
-@fontSizeBody:  16px;
-@lineHeight:    (unit(@magicNumber) / unit(@fontSizeBody));
-
-@fontSizeH1: 2.375em;
-@fontSizeH2: 1.875em;
-@fontSizeH3: 1.375em;
-@fontSizeH4: 1.25em;
-@fontSizeH5: 1em;
-@fontSizeH6: 0.875em;
-
-@fontSizeCodeInline:  1.25em;
-@fontSizeCodeBlock:   1.25em;
-@lineHeightCodeBlock: 1.6;
-
-@fontSizeSupSub: 0.75em;
-
-@fontSizeSmall: 0.875em;
-
-
 
 /**
  * Size and lineheight calculation for magicNumber 24

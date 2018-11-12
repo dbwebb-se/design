@@ -3,6 +3,21 @@ Revision History
 
 
 
+v1.1.1 (2018-11-07)
+------------------------
+
+* Bump version.
+
+
+
+v1.1.0 (2018-10-26)
+------------------------
+
+* The grid now consists of typography-font-families.less and typography-defaults.less.
+* Documentation written and published with examples on GitHub Pages.
+
+
+
 v1.0.6 (2018-10-15)
 ------------------------
 

@@ -1,12 +1,47 @@
 /**
  * Typographic defaults.
  */
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 16px;
+
+// Default font-families
+@fontFamilyHeadings: "serif";
+@fontFamilyBody:     "sans-serif";
+@fontFamilyCode:     "monospace";
+
+// header h1-h6 font sixe
+@fontSizeH1: 2.375em;
+@fontSizeH2: 1.875em;
+@fontSizeH3: 1.75em;
+@fontSizeH4: 1.5em;
+@fontSizeH5: 1.25em;
+@fontSizeH6: 1.25em;
+
+// header h1-h6 borders
 @colorH1BorderBottom: #666;
 @colorH2BorderBottom: #CCC;
 @colorH3BorderBottom: #EEE;
+@colorH4BorderBottom: #EEE;
+@colorH5BorderBottom: #EEE;
+@colorH6BorderBottom: #EEE;
 @borderSizeH1: 1px;
 @borderSizeH2: 1px;
 @borderSizeH3: 1px;
+@borderSizeH4: 1px;
+@borderSizeH5: 1px;
+@borderSizeH6: 1px;
+
+// fontsize code blocks
+//@fontSizeCodeInline:  1.25em;
+@fontSizeCodeBlock:   1.0em;
+@lineHeightCodeBlock: 1.5;
+
+ // fontsize super and subscripts
+ @fontSizeSupSub: 0.75em;
+
+ // fontsize smaller
+ @fontSizeSmall: 0.875em;
 
 @colorTypographyMark: #000;
 @bgColorTypographyMark:  #ff9;
@@ -34,9 +69,29 @@
 
 #desinax-hgrid {
 
+    /**
+     * Mixins used when setting default fonts
+     */
+    .showGrid(@gridImage) {
+        background-image: url("@{gridImage}");
+    }
+
+    .font(@fontSize: 100.01%, @fontFamily: @fontFamilyBody) {
+        font: @fontSize/unit((@magicNumber / @fontSizeBody)) @fontFamily;
+    }
+
+    .fontSize(@fontSize) {
+        font-size: @fontSize;
+        @lineHeightBase: unit((@magicNumber / @fontSizeBody));
+        line-height: @lineHeightBase / unit(@fontSize) * ceil(unit(@fontSize) / @lineHeightBase );
+    }
+
+    // 5/4 for smaller font-size, incremental leading.
+
+
 
     /**
-     * Headings
+     * Settings for headings H1-H6
      */
     .typographyHeadings() {
         h1,
@@ -81,7 +136,6 @@
             #desinax-hgrid.fontSize(@fontSizeH2);
 
             font-weight: normal;
-            margin-top: @magicNumber * 2;
             margin-bottom: @magicNumber - @borderSizeH2;
             border-bottom: @borderSizeH2 solid @colorH2BorderBottom;
 
@@ -94,23 +148,42 @@
             #desinax-hgrid.fontSize(@fontSizeH3);
 
             font-weight: normal;
-            margin-top: @magicNumber * 2;
             margin-bottom: @magicNumber - @borderSizeH3;
             border-bottom: @borderSizeH3 solid @colorH3BorderBottom;
+
+            & + h4 {
+                margin-top: @magicNumber;
+            }
         }
 
         h4 {
             #desinax-hgrid.fontSize(@fontSizeH4);
 
             font-weight: normal;
+            margin-bottom: @magicNumber - @borderSizeH4;
+            border-bottom: @borderSizeH4 solid @colorH4BorderBottom;
+
+            & + h5 {
+                margin-top: @magicNumber;
+            }
         }
 
         h5 {
             #desinax-hgrid.fontSize(@fontSizeH5);
+
+            margin-bottom: @magicNumber - @borderSizeH5;
+            border-bottom: @borderSizeH5 solid @colorH5BorderBottom;
+
+            & + h6 {
+                margin-top: @magicNumber;
+            }
         }
 
         h6 {
             #desinax-hgrid.fontSize(@fontSizeH6);
+
+            margin-bottom: @magicNumber - @borderSizeH5;
+            border-bottom: @borderSizeH5 solid @colorH5BorderBottom;
         }
     }
 
@@ -121,7 +194,6 @@
      */
     .typographyTextElements() {
         p {
-            margin-top: @magicNumber;
             margin-bottom: @magicNumber;
         }
 
@@ -187,13 +259,15 @@
         kbd,
         samp,
         .code {
-            font-size: @fontSizeCodeInline;
+            //font-size: @fontSizeCodeInline;
             font-family: @fontFamilyMonospace;
         }
 
         code,
         samp {
             border: 1px solid @borderColorCodeInline;
+            padding-left: 1px;
+            padding-right: 1px;
         }
 
         code {
@@ -209,7 +283,7 @@
         }
 
         pre {
-            margin-top: @magicNumber;
+            //margin-top: @magicNumber;
             margin-bottom: @magicNumber;
         }
 
@@ -222,7 +296,7 @@
         pre code {
             border-top: @borderSizeCodeblock solid @colorCodeBlockBorder;
             border-bottom: @borderSizeCodeblock solid @colorCodeBlockBorder;
-            margin-top: @magicNumber - @borderSizeCodeblock;
+            //margin-top: @magicNumber - @borderSizeCodeblock;
             margin-bottom: @magicNumber - @borderSizeCodeblock;
             padding-top: @magicNumber / 2;
             padding-bottom: @magicNumber / 2;
@@ -241,7 +315,7 @@
 
         ul,
         ol {
-            margin-top: @magicNumber;
+            //margin-top: @magicNumber;
             margin-bottom: @magicNumber;
             padding-left: 1.5em;
 
@@ -266,7 +340,7 @@
 
         // dl dt dd
         dl {
-            margin-top: @magicNumber;
+            //margin-top: @magicNumber;
             margin-bottom: @magicNumber;
 
             &.horizontal {
@@ -305,7 +379,7 @@
         .table,
         .table1,
         .table2 {
-            margin-top: @magicNumber;
+            //margin-top: @magicNumber;
             margin-bottom: @magicNumber;
         }
 
