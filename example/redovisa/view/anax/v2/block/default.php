@@ -15,14 +15,14 @@ if (isset($class)) {
     $classes[] = $class;
 }
 
-// Load content details from route 
+// Load content details from route
 if (isset($contentRoute)) {
     extract(getContentForRoute($contentRoute));
 }
 
 // Prepare title
 $title = isset($title) && !empty($title)? $title : null;
-$header = isset($header) ? $header : $title; 
+$header = isset($header) ? $header : $title;
 
 // Prepare content into text
 $content = isset($content) ? $content : null;
@@ -43,13 +43,13 @@ $text = isset($text) ? $text : $content;
     <?php if (isset($links)) :
         renderView(__DIR__ . "/../link-list/default", [
             "links" => $links
-        ]); 
+        ]);
     endif; ?>
 
     <?php if (isset($toc)) :
         renderView(__DIR__ . "/../toc-list/default", [
             "toc" => $toc
-        ]); 
+        ]);
     endif; ?>
 
 </div>

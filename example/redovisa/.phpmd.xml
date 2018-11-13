@@ -40,10 +40,21 @@
 
     <rule ref="rulesets/naming.xml/ShortMethodName">
         <properties>
-            <property name="exceptions" value="t" />
+            <property name="exceptions" value="t,e" />
         </properties>
     </rule>
 
-    <rule ref="rulesets/unusedcode.xml" />
+    <rule ref="rulesets/unusedcode.xml">
+        <exclude name="UnusedLocalVariable" />
+    </rule>
+
+    <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable">
+        <properties>
+            <property
+                name="allow-unused-foreach-variables"
+                description="Allow unused variables in foreach language constructs."
+                value="true" />
+        </properties>
+    </rule>
 
 </ruleset>

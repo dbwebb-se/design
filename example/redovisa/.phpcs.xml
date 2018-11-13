@@ -10,6 +10,7 @@
     <exclude-pattern>doc</exclude-pattern>
     <exclude-pattern>htdocs</exclude-pattern>
     <exclude-pattern>test/config.php</exclude-pattern>
+    <exclude-pattern>theme</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
 
     <arg name="encoding" value="utf-8"/>

@@ -1,0 +1,46 @@
+/**
+ * This is the default grid style activated, without any own settings.
+ */
+@import "src/less/typography-font-families.less";
+@import "src/less/typography-defaults.less";
+
+// // Activate the grid base font
+// body {
+//     #desinax-hgrid.font(@fontSizeBody);
+// }
+// 
+// // Activate grid and affect all typographic elements
+// #desinax-hgrid.activateDefaultTypography();
+
+// Show the grid
+.hgrid .wrap {
+    @gridImage: "../../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+}
+
+
+
+// Just to make the example more visible
+.meta {
+    position: absolute;
+    top: 0;
+    color: #666;
+    z-index: -1;
+}
+
+.magic-number::after {
+    content: "@{magicNumber}"
+}
+
+.base-fontsize::after {
+    content: "@{fontSizeBody}"
+}
+
+html {
+    background-color: #ccffdd;
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 800px;
+}

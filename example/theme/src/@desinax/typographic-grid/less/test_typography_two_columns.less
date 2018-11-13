@@ -1,0 +1,118 @@
+ /**
+  * Example for the two column layout where one can compare two different
+  * instances of the grid.
+  */
+@import "src/less/typography-font-families.less";
+@import "src/less/typography-defaults.less";
+
+/**
+ * Settings for grid in column-a
+ */
+ .column-a {
+     .grid-meta(@magicNumber, @fontSizeBody);
+
+     body & {
+         // Activate the grid base font
+         #desinax-hgrid.font(@fontSizeBody);
+     }
+
+     // Activate grid and affect all typographic elements
+     #desinax-hgrid.activateDefaultTypography();
+
+     // Show the grid
+     @gridImage: "../../img/magic-number-@{magicNumber}.png";
+     #desinax-hgrid.showGrid(@gridImage);
+
+     // Magic number and default fontsize, together makes up base lineheight
+     @magicNumber:  22px;
+     @fontSizeBody: 16px;
+ }
+
+
+
+/**
+ * Settings for grid in column-b
+ */
+.column-b {
+    .grid-meta(@magicNumber, @fontSizeBody);
+
+    body & {
+        // Activate the grid base font
+        #desinax-hgrid.font(@fontSizeBody);
+    }
+
+    // Activate grid and affect all typographic elements
+    #desinax-hgrid.activateDefaultTypography();
+
+    // Show the grid
+    @gridImage: "../../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+
+    // Magic number and default fontsize, together makes up base lineheight
+    @magicNumber:  24px;
+    @fontSizeBody: 16px;
+
+    // Set font family to use
+    @fontFamilyHeadings:  @fontFamilyCambria;
+    @fontFamilyBody:      @fontFamilyCalibri;
+    @fontFamilyCode:      @fontFamilyCourier;
+}
+
+
+
+/**
+ * Just to make the example more visible
+ */
+* {
+    box-sizing: border-box;
+}
+
+.grid-meta(@magicNumber, @fontSizeBody) {
+    position: relative;
+
+    .meta {
+        position: absolute;
+        top: -55px;
+
+        .magic-number::after {
+            content: "@{magicNumber}"
+        }
+
+        .base-fontsize::after {
+            content: "@{fontSizeBody}"
+        }
+    }
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 1300px;
+    margin-bottom: 40px;
+    background-color: #ccffdd;
+    padding: 1em;
+    border: 1px solid #66ff99;
+    overflow: auto;
+}
+
+.row {
+    background-color: #66ff99;
+    padding-top: 0.5em;
+}
+
+.column,
+.column-a,
+.column-b {
+    width: 50%;
+    float: left;
+    padding: 0 1em;
+    border-left: 1px solid #66ff99;
+}
+
+.column {
+    margin-bottom: 1em;
+    background-color: #ccffdd;
+}
+
+.column-meta {
+    height: 50px;
+}

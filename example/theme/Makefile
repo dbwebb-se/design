@@ -126,7 +126,7 @@ clean:
 .PHONY: clean-all
 clean-all: clean
 	@$(call HELPTEXT,$@)
-	rm -rf node_modules package-lock.json
+	rm -rf node_modules
 
 
 
@@ -170,7 +170,7 @@ test: less-lint
 
 # ------------------------------------------------------------------------
 #
-# External modules install
+# External modules install/clean
 #
 # target: modules-desinax-install - Install Desinax modules into less/sass/js-dir.
 .PHONY: modules-desinax-install
@@ -183,10 +183,21 @@ modules-desinax-install:
 			&& $(ECHO) "Module not installed, skipping it." \
 			&& continue;                      \
 		install -d ../src/$$module;           \
-		rsync -av --delete $$module/src/ ../src/$$module/; \
+		rsync -av $$module/src/ ../src/$$module/; \
 		rsync -a $$module/README.md ../src/$$module/; \
 		rsync -a $$module/REVISION.md ../src/$$module/; \
 		rsync -a $$module/LICENSE ../src/$$module/; \
+	done
+
+
+
+# target: modules-desinax-clean   - Clean Desinax modules from src/.
+.PHONY: modules-desinax-clean
+modules-desinax-clean:
+	@$(call HELPTEXT,$@)
+	for module in $(DESINAX_MODULES) ; do     \
+		$(call ACTION_MESSAGE, $$module);     \
+		rm -rf src/$$module/*; 		          \
 	done
 
 
@@ -198,12 +209,25 @@ modules-install: modules-desinax-install
 
 	# Normalize.css
 	npm install normalize.css
-	rsync -av --exclude package.json --delete node_modules/normalize.css src/
+	rsync -av --exclude package.json node_modules/normalize.css src/
 	rsync -av src/normalize.css/normalize.css src/normalize.css/normalize.less
 
 	# Font Awesome
 	npm install @fortawesome/fontawesome-free
-	rsync -av --exclude package.json --delete node_modules/@fortawesome/fontawesome-free src/@fortawesome/
+	rsync -av --exclude package.json node_modules/@fortawesome/fontawesome-free src/@fortawesome/
+
+
+
+# target: modules-clean           - Clean external modules.
+.PHONY: modules-clean
+modules-clean: modules-desinax-clean
+	@$(call HELPTEXT,$@)
+
+	# Normalize.css
+	rm -rf src/normalize.css
+
+	# Font Awesome
+	rm -rf src/@fortawesome
 
 
 
