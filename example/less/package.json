@@ -4,8 +4,11 @@
   "private": true,
   "description": "Example program to test the less compiler.",
   "scripts": {
-    "build": "node_modules/.bin/lessc style.less style.css && node_modules/.bin/lessc --clean-css style.less style.min.css",
-    "clean": "rm -rf node_modules package-lock.json",
+    "build": "npm run build-css | npm run build-min",
+    "build-css": "node_modules/.bin/lessc style.less style.css",
+    "build-min": "node_modules/.bin/lessc --clean-css style.less style.min.css",
+    "clean": "rm -f style.css style.min.css",
+    "clean-all": "rm -rf node_modules package-lock.json",
     "test": "node_modules/.bin/lessc --lint style.less"
   },
   "author": "Mikael Roos, mos@dbwebb.se",
