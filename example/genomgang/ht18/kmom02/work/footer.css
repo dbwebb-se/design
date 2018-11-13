@@ -8,13 +8,15 @@
 .inner-wrap-footer {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
 }
 
 .footer-column {
-    text-align: center;
     display: inline;
     float: left;
-    width: 28%;
-    margin: 0 2%;
+    width: 26%;
+    margin: 0 3%;
+}
+
+.footer-column h3 {
+    font-size: 1.8em;
 }

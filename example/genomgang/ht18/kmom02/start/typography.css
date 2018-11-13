@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif|Petit+Formal+Script');
+@import url('https://fonts.googleapis.com/css?family=KoHo');
 
 html {
     font-size: 100%;
-    font-family: 'PT Serif', serif;
+    font-family: 'KoHo', serif;
+    line-height: 1.4;
 }
 
 h1 {
