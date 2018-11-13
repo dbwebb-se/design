@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Petit+Formal+Script');
+
+html {
+    font-size: 100%;
+    font-family: 'PT Serif', serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+}
+
+@media (min-width: 64em) {
+  html {
+    font-size: 112.5%;
+  }
+}

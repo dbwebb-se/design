@@ -1,0 +1,11 @@
+.outer-wrap-header {
+    background-color: #343148;
+    color: white;
+    box-sizing: border-box;
+    padding: 0.4em 1em;
+}
+
+.outer-wrap-header h1 {
+    margin: 0;
+    font-family: 'Petit Formal Script', cursive;
+}

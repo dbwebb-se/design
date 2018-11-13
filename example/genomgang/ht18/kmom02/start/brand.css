@@ -1,0 +1,13 @@
+.brand {
+    font-size: 2.6em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.brand h2 {
+    text-transform: uppercase;
+}
+
+.brand p {
+    color: #222;
+}

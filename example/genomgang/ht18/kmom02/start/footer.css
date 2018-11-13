@@ -1,0 +1,20 @@
+.outer-wrap-footer {
+    background-color: #006e6d;
+    color: white;
+    padding: 2em 1em;
+    box-sizing: border-box;
+}
+
+.inner-wrap-footer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-column {
+    text-align: center;
+    display: inline;
+    float: left;
+    width: 28%;
+    margin: 0 2%;
+}
