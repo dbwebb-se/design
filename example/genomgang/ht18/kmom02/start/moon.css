@@ -1,1 +1,6 @@
-
+.outer-wrap-main {
+    background-image: url('moon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% -20%;
+}

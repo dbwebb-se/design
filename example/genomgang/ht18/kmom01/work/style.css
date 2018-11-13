@@ -32,7 +32,7 @@ li {
 }
 
 .box:hover {
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .outer-wrap-main {
@@ -46,7 +46,7 @@ li {
 .inner-wrap-main {
     margin: 0 auto;
     width: 960px;
-    background-color: #99F;
+    background-color: #99f;
     color: white;
 }
 

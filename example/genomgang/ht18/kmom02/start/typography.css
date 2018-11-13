@@ -22,7 +22,7 @@ p {
 }
 
 @media (min-width: 64em) {
-  html {
-    font-size: 112.5%;
-  }
+    html {
+        font-size: 112.5%;
+    }
 }

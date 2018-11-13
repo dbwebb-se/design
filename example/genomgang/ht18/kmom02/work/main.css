@@ -1,9 +1,5 @@
 .outer-wrap-main {
     background-color: #343148;
     color: white;
-    padding: 2em 1em 8em 1em;
-    background-image: url('moon.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% -20%;
+    padding: 2em 1em 8em;
 }
