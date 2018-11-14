@@ -1,3 +1,3 @@
 /*!
  * Testing to compile less to css and minify the stylesheet.
- */html{background-color:#333}body{color:#0f0;margin:8px auto;padding:1em;max-width:500px;border:1px solid #0f0}h1{border-bottom:1px solid #0f0}
+ */html{background-color:#333}body{color:#0f0;margin:8px auto;padding:1em;max-width:500px;border:1px solid #0f0}h1{border-bottom:1px solid #0f0}body{margin-bottom:22px}

@@ -14,3 +14,6 @@ body {
 h1 {
   border-bottom: 1px solid #0f0;
 }
+body {
+  margin-bottom: 22px;
+}
