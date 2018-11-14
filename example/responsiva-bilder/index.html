@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Responsiva bilder</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="main">
+        <h1>Responsiva bilder</h1>
+
+        <h4>Bild utan begränsing på storlek</h4>
+        <img src="sheep@2x.jpg" class="no-style" alt="sheep" />
+
+        <h4>Bild med <code>max-width: 100%;</code></h4>
+        <img src="sheep@2x.jpg" class="max-width" alt="sheep" />
+
+        <h4>Bild med srcset</h4>
+        <img src="sheep.jpg" class="max-width" srcset="sheep@2x.jpg 2x" alt="sheep" />
+
+        <h4>Bild med picture och srcset</h4>
+        <picture>
+            <source media="(min-width: 668px)" srcset="sheep.jpg, sheep@2x.jpg 2x">
+            <source media="(min-width: 376px)" srcset="sheep-small-landscape.jpg">
+            <img src="sheep-small-portrait.jpg" class="max-width" alt="sheep">
+        </picture>
+
+        <h4>SVG vs PNG (200px bred)</h4>
+        <img src="CSS3_logo.svg" alt="CSS3 logo svg" class="full-width" />
+        <img src="CSS3_logo.png" alt="CSS3 logo svg" class="full-width" />
+    </main>
+</body>
+</html>
