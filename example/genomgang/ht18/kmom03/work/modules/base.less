@@ -1,0 +1,27 @@
+@baseFontSize: 1.2em;
+@baseLineHeight: 1.4;
+@magicNumber: @baseFontSize * @baseLineHeight;
+
+html {
+    font-size: 100%;
+}
+
+body {
+    line-height: @baseLineHeight;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: @magicNumber; /* 1em * 1.4 */
+}
+
+p {
+    font-size: @baseFontSize;
+    margin-bottom: @magicNumber; /* 1em * 1.4 */
+}
+
+@media (min-width: 60em) {
+    html {
+        font-size: 112.5%;
+    }
+}
