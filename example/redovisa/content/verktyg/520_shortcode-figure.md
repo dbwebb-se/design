@@ -22,7 +22,7 @@ Du kan skapa en ny bild som läggs i ett html-element `<figure>`, genom att ange
 
 [FIGURE src="image/kabbe.jpg?w=600&h=200&crop-to-fit"]
 
-DU kan skapa samma bild och lägga till en bildtext, med följande konstruktion.
+Du kan skapa samma bild och lägga till en bildtext, med följande konstruktion.
 
 &#x5b;FIGURE src="image/kabbe.jpg?w=600&h=200&crop-to-fit" caption="Kabbe är ute och går en höstdag."]
 
