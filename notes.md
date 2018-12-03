@@ -3,13 +3,69 @@ Notes
 
 
 
+Fläs kmom04
+===============================
+
+
+Allmänt
+-------------------------------
+
+* Byt tema via querysträngen.
+
+* Hur tänka kring committ-meddelanden i Git-repot?
+https://dbwebb.se/forum/viewtopic.php?t=8044
+
+
+
+Färger
+-------------------------------
+
+* Psykologi med färger
+* Färghjul (olika typer)
+
+* Testa "contrast ratio" mellan färg på text och bakgrund
+https://dbwebb.se/forum/viewtopic.php?f=53&t=8043
+
+
+
+Typografi
+-------------------------------
+
+* Kombinera typografi med färger
+
+
+
+LESS
+-------------------------------
+
+* funktioner
+* färger
+* if-sats
+* maps
+
+
+
+Fläs kmom03
+===============================
+
+less
+
+* namespace
+* scope om mixins
+* mer om moduler, scope?
+* guards
+
+
+
 Fläs kmom02
 ===============================
+
+
 
 Prep
 -------------------------------
 
-Feedback om rekommenderad studieplan. 
+Feedback om veckoschema.
 
 Migrera kursrepot.
 
