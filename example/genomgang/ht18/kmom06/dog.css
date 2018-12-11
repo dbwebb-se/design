@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
+html {
+    background: url(dog.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 2.1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 2.1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.4rem;
+    margin-bottom: 2.1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.header {
+    box-sizing: border-box;
+    padding: 0.4em 2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.arrow {
+    animation: MoveUpDown 3s ease-in-out infinite;
+    position: absolute;
+    bottom: 6vh;
+    left: 49vw;
+    width: 0;
+    height: 0;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-top: 2vw solid #4c7019;
+}
+
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 6vh;
+    }
+    50% {
+        bottom: 4vh;
+    }
+}
+
+.main {
+    box-sizing: border-box;
+    padding: 2em;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 100vh;
+    margin-bottom: 40vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.divider {
+    height: 0.2rem;
+    margin: 0 0 1.9rem;
+    background-color: #4c7019;
+}
+
+.box {
+    width: 45%;
+    float: left;
+}
+
+.left-box {
+    margin-right: 10%;
+}
+
+img {
+    max-width: 100%;
+}
