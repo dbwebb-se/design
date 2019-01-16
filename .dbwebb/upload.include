@@ -14,15 +14,19 @@
 
 /example/
 - /example/**/node_modules
-- /example/**/theme/src/@*
+- /example/**/theme/htdocs
+- /example/**/theme/src/*/*
 /example/**
 
 /me/
 - /me/**/.bin
+- /me/**/.git
+- /me/**/build
 - /me/**/cache/cimage/*
 - /me/**/cache/anax/*
 - /me/**/node_modules
-- /me/**/theme/src/@*
+- /me/**/theme/src/*/*
+- /me/**/theme/htdocs
 - /me/**/vendor/mos/cimage/webroot
 - /me/**/vendor/**/doc
 - /me/**/vendor/**/docs
