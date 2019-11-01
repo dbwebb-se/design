@@ -7,6 +7,7 @@ v2.1.0 (2019-11-01)
 
 * Update Makefile to latest version (phpmd installation).
 * Update package.json with updated version.
+* Update example/redovisa from scaffolding.
 
 
 
