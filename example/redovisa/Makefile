@@ -401,67 +401,79 @@ bats:
 
 # ------------------------------------------------------------------------
 #
+# Developer
+#
+# target: scaff-reinstall         - Reinstall using scaffolding processing scripts.
+.PHONY: scaff-reinstall
+scaff-reinstall:
+	@$(call HELPTEXT,$@)
+	#rm -rf -v !(composer.*|vendor|.anax); .anax/scaffold/postprocess.bash
+
+
+
+# ------------------------------------------------------------------------
+#
 # Theme
 #
 # target: theme                   - Do make build install in theme/ if available.
 .PHONY: theme
 theme:
 	@$(call HELPTEXT,$@)
-	[ ! -d theme ] || $(MAKE) --directory=theme build install
-	#[ ! -d theme ] || ( cd theme && make build install )
+	[ ! -d theme ] || $(MAKE) --directory=theme build
+	rsync -a theme/htdocs/css htdocs/
 
 
 
-# ------------------------------------------------------------------------
-#
-# Cimage
-#
-
-define CIMAGE_CONFIG
-<?php
-return [
-    "mode"         => "development",
-    "image_path"   =>  __DIR__ . "/../img/",
-    "cache_path"   =>  __DIR__ . "/../../cache/cimage/",
-    "autoloader"   =>  __DIR__ . "/../../vendor/autoload.php",
-];
-endef
-export CIMAGE_CONFIG
-
-define GIT_IGNORE_FILES
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore
-endef
-export GIT_IGNORE_FILES
-
-# target: cimage-install          - Install Cimage in htdocs
-.PHONY: cimage-install
-cimage-install:
-	@$(call HELPTEXT,$@)
-	install -d htdocs/img htdocs/cimage cache/cimage
-	chmod 777 cache/cimage
-	$(ECHO) "$$GIT_IGNORE_FILES" | bash -c 'cat > cache/cimage/.gitignore'
-	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
-	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
-	touch htdocs/cimage/img_config.php
-
-# target: cimage-update           - Update Cimage to latest version.
-.PHONY: cimage-update
-cimage-update:
-	@$(call HELPTEXT,$@)
-	composer require mos/cimage
-	install -d htdocs/img htdocs/cimage cache/cimage
-	chmod 777 cache/cimage
-	$(ECHO) "$$GIT_IGNORE_FILES" | bash -c 'cat > cache/cimage/.gitignore'
-	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
-	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
-	touch htdocs/cimage/img_config.php
-
-# target: cimage-config-create    - Create configfile for Cimage.
-.PHONY: cimage-config-create
-cimage-config-create:
-	@$(call HELPTEXT,$@)
-	$(ECHO) "$$CIMAGE_CONFIG" | bash -c 'cat > htdocs/cimage/img_config.php'
-	cat htdocs/cimage/img_config.php
+# # ------------------------------------------------------------------------
+# #
+# # Cimage
+# #
+# 
+# define CIMAGE_CONFIG
+# <?php
+# return [
+#     "mode"         => "development",
+#     "image_path"   =>  __DIR__ . "/../img/",
+#     "cache_path"   =>  __DIR__ . "/../../cache/cimage/",
+#     "autoloader"   =>  __DIR__ . "/../../vendor/autoload.php",
+# ];
+# endef
+# export CIMAGE_CONFIG
+# 
+# define GIT_IGNORE_FILES
+# # Ignore everything in this directory
+# *
+# # Except this file
+# !.gitignore
+# endef
+# export GIT_IGNORE_FILES
+# 
+# # target: cimage-install          - Install Cimage in htdocs
+# .PHONY: cimage-install
+# cimage-install:
+# 	@$(call HELPTEXT,$@)
+# 	install -d htdocs/img htdocs/cimage cache/cimage
+# 	chmod 777 cache/cimage
+# 	$(ECHO) "$$GIT_IGNORE_FILES" | bash -c 'cat > cache/cimage/.gitignore'
+# 	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
+# 	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
+# 	touch htdocs/cimage/img_config.php
+# 
+# # target: cimage-update           - Update Cimage to latest version.
+# .PHONY: cimage-update
+# cimage-update:
+# 	@$(call HELPTEXT,$@)
+# 	composer require mos/cimage
+# 	install -d htdocs/img htdocs/cimage cache/cimage
+# 	chmod 777 cache/cimage
+# 	$(ECHO) "$$GIT_IGNORE_FILES" | bash -c 'cat > cache/cimage/.gitignore'
+# 	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
+# 	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
+# 	touch htdocs/cimage/img_config.php
+# 
+# # target: cimage-config-create    - Create configfile for Cimage.
+# .PHONY: cimage-config-create
+# cimage-config-create:
+# 	@$(call HELPTEXT,$@)
+# 	$(ECHO) "$$CIMAGE_CONFIG" | bash -c 'cat > htdocs/cimage/img_config.php'
+# 	cat htdocs/cimage/img_config.php
