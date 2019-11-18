@@ -1,1 +1,0 @@
-../kmom03/dump_skolan.sql
