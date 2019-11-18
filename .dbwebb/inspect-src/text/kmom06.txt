@@ -1,0 +1,9 @@
+Då tar vi kmom06, sedan är det bara projektet kvar.
+
+Jag kör en dbwebb inspect, läser igenom redovisningstexten och kollar att labben är utförd.
+
+Jag tittar på CRUD i uppgiften admin.php och search.php. Jag vill se att din lösning uppfyller specen.
+
+Gott kämpat så här långt.
+
+$TEACHER_SIGNATURE

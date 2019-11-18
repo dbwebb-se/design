@@ -1,0 +1,13 @@
+FIX. Det ser ut som du missat inkludera en multisida i din me3.  Se krav 2 i https://dbwebb.se/uppgift/bygg-ut-din-htmlphp-me-sida-till-version-3-v2#krav
+
+PS. Du har dock gjort en fin multisida av din report, bonus för den.
+
+FIX. Du har använt en funktion (array_key_first/array_key_last) som kräver PHP 7.3 och det stöds inte på studentservern. Se foruminlägg https://dbwebb.se/t/8761.
+
+FIX. Din multisida där du läser från arrayen är tom/blank. Du har (troligen) använt en funktion (array_key_first/array_key_last) som kräver PHP 7.3 och det stöds inte på studentservern. Eventuellt har du även inte satt på felmeddelanden så att de syns. Se foruminlägg https://dbwebb.se/t/8761.
+
+PS. Använd gärna <p> element när du skriver din text i tex redovisningen. Man får då lite mellanrum mellan textstyckena och det blir enklare att läsa.
+
+PS. Du har en hel del valideringsfel. Dubbelkolla det mot "dbwebb validate kmom03" och fixa till dem.
+
+FIX. Din redovisningstext är för kort, den lever inte upp till mini-kravet. Dubbelkolla hur du skall skriva redovisningstexten https://dbwebb.se/kurser/htmlphp-v3/kmom03#resultat_redovisning

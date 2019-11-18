@@ -1,0 +1,11 @@
+Då tittar vi kmom02 med LESS.
+
+Jag tittar på din me/redovisa för att se att ditt LESS-tema fungerar, med hamburgermenyn, är uppdelat i moduler och är aktiverat som default stylesheet.
+
+Jag läser igenom din redovisningstext.
+
+Jag kikar på ditt repo på GitHub för att se att committs och taggar är på plats.
+
+Gott kämpat så här långt, kör på.
+
+$TEACHER_SIGNATURE

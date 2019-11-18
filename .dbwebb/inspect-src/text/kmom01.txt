@@ -1,0 +1,13 @@
+Hjärtligt välkommen till kursen design!
+
+Jag tittar snabbt på din me/redovisa för att se att alla delar är med och att webbplatsen är hyffsat "användbar" med din CSS-kod.
+
+Jag kollar igenom din redovisningstext så att allt såg okey ut.
+
+Jag kikar på ditt repo på GitHub för att se att committs och taggar är på plats.
+
+En god start. Kämpa på.
+
+$TEACHER_SIGNATURE
+
+PS. Glöm inte att fråga i forumet för mer utförliga svar.

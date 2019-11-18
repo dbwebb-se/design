@@ -1,0 +1,1 @@
+KOMMENTAR -5p krav 5 Galleriet fick inte full pott då jag inte kunde navigera (nästa/föregående) och visa ett visst antal bilder per sida.

@@ -1,0 +1,13 @@
+FIX. Det verkar som du saknar taggen för kmom01 på GitHub?
+
+FIX. Du har troligen missat att uppdatera din fil htdocs/.htaccess. Man kan se det på studentservern genom att bilderna inte visas och att länkarna i navbaren inte fungerar.
+
+FIX. Din länk till ditt egna GitHub-repo fungerade inte. Jag tittar på den länken på din om-sida. Vill du fixa den?
+
+PS. Glöm inte att ha en hyffsad omfattning på din redovisningstext, du kan lite mer än du visar i detta kmom.
+
+PS. Formattera redovisningstexten left aligned, annars är det svårt att läsa.
+
+FIX. "Skriv mer redovisningstext", se instruktionen i https://dbwebb.se/kurser/design/redovisa#text
+
+PS. Snygg me-sida och bra redovisningstext.

@@ -1,0 +1,13 @@
+FIX. Det verkar som du saknar taggen för kmom02 på GitHub?
+
+KOMMENTAR. Det finns en tråd i forumet om "Hur fördela mellan layout.less och base.less", (https://dbwebb.se/t/8847) kika där för ett resonemang.
+
+PS. Glöm inte att ha en hyffsad omfattning på din redovisningstext, du kan lite mer än du visar i detta kmom.
+
+KOMMENTAR. Plocka gärna bort dummytexten o footern och se om du kan hitta något "vettigt" att placera där.
+
+Jag kikade på ditt kmom01 i samband med att jag rättade kmom02, så allt är okey även i kmom01 (kmom02 bygger ju bara vidare på det vi gjorde i kmom01).
+
+KOMMENTAR. Det såg bra ut med dina commits och meddelanden, fin historik.
+
+FIX. Länken till ditt GitHub-repo funkade inte, uppdatera den.

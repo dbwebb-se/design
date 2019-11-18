@@ -1,0 +1,5 @@
+FIX. Din admin fungerar inte och det kan bero på https://dbwebb.se/t/8783.
+
+KOMMENTAR. Du gör DELETE via en GET form, det borde varit ett POST form. Lägg det på minnet men jag låter det passera.
+
+KOMMENTAR. Jag hittade inte INIT funktionen som återställer databasen? Men jag släpper det.
