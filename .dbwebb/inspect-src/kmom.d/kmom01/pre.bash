@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
-
+#
+# Script run BEFORE specific kmom specific scripts.
+#
+# Available (and usable) data:
+#   $COURSE
+#   $KMOM
+#   $ACRONYM
+#   $COURSE_REPO
+#   $REDOVISA_HTTP_PREFIX
+#   $REDOVISA_HTTP_POSTFIX
+#   eval "$BROWSER" "$url" &
+#
 printf ">>> -------------- Pre ($kmom)    ----------------------\n"
 
 # # Open localhost:1337 in browser

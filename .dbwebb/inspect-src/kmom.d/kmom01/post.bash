@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-
+#
+# Script run AFTER specific kmom specific scripts.
+#
 printf ">>> -------------- Post ($kmom)    ---------------------\n"
 
 # # Open localhost:1337 in browser

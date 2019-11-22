@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
-
+#
+# Script run AFTER kmom specific scripts.
+# Put tests here that applies to all kmoms.
+#
+# Available (and usable) data:
+#   $COURSE
+#   $KMOM
+#   $ACRONYM
+#   $COURSE_REPO
+#   $REDOVISA_HTTP_PREFIX
+#   $REDOVISA_HTTP_POSTFIX
+#   eval "$BROWSER" "$url" &
+#
 printf ">>> -------------- Post (all kmoms) ---------------------\n"
 
 # # Open localhost:1337 in browser
