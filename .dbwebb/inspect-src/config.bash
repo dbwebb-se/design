@@ -9,7 +9,7 @@
 #echo $COURSE
 
 # Where are the inspect source files stored, default is in the course repo
-#export DBWEBB_INSPECT_SOURCE_DIR="$DIR/.dbwebb/inspect-src"
+#export INSPECT_SOURCE_DIR="$DIR/.solutions/inspect-src"
 
 # Course specific settings
 export REDOVISA_HTTP_PREFIX="http://www.student.bth.se"

@@ -6,7 +6,7 @@
 #   $COURSE
 #   $KMOM
 #   $ACRONYM
-#   $COURSE_REPO
+#   $DIR
 #   $REDOVISA_HTTP_PREFIX
 #   $REDOVISA_HTTP_POSTFIX
 #   eval "$BROWSER" "$url" &
@@ -18,7 +18,7 @@ printf ">>> -------------- Pre ($kmom)    ----------------------\n"
 # eval "$BROWSER" "http://127.0.0.1:1337/eshop/index" &
 
 # # Open me/kmom01/redovisa
-# url="$REDOVISA_HTTP_PREFIX/~$acronym/dbwebb-kurser/$COURSE/me/redovisa/htdocs"
+# url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me/redovisa/htdocs"
 # printf "$url\n" 2>&1
 # eval "$BROWSER" "$url" &
 
