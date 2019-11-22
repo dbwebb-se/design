@@ -48,7 +48,11 @@ make dbwebb-inspect options="--yes --no-validate" what=kmom01
 # Kmom02
 #
 
-
+#
+# Add me/redovisa/theme
+#
+rsync -av example/theme/ me/redovisa/theme/
+# cd me/redovisa/theme && make install modules-install
 
 
 

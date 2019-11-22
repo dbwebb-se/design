@@ -105,7 +105,8 @@ prepare:
 	@$(call HELPTEXT,$@)
 	@[ -d $(BUILD)/less/css ] || install -d $(BUILD)/less/css
 	@[ -d $(BUILD)/less/lint ] || install -d $(BUILD)/less/lint
-
+	@rm -f $(BUILD)/less/css/*
+	@rm -f $(BUILD)/less/lint/*
 
 
 # target: build                   - Build the stylesheets.

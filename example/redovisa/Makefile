@@ -420,7 +420,7 @@ scaff-reinstall:
 theme:
 	@$(call HELPTEXT,$@)
 	[ ! -d theme ] || $(MAKE) --directory=theme build
-	rsync -a theme/htdocs/css htdocs/
+	rsync -a theme/build/css htdocs/
 
 
 
