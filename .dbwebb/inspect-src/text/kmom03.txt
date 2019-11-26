@@ -1,10 +1,10 @@
-Vi kör på med kmom03...
+Då tittar vi på kmom03 och gridet.
 
-Jag kikar på "dbwebb inspect" så att allt ligger på plats och validerar och jag kollar hur du lyckats med labben.
+Jag tittar på din me/redovisa för att se att ditt LESS-tema fungerar för kmom03. Jag vill se att ?hgrid och ?vgrid syns och att det ligger i linje med ditt innehåll i webbsidan. Jag vill även se att du har viss struktur på din typografi och ett medvetet val om typsnitt samt att ditt tema löser övriga krav i uppgiften.
 
-Jag läser igenom redovisningstexten för att få en uppfattning om hur du upplever kmomet.
+Jag läser igenom din redovisningstext.
 
-Jag tittar runt på din me3-sida och ser att du har inkluderat multisidan från övningen.
+Jag kikar på ditt repo på GitHub för att se att committs och taggar är på plats och att temafilerna ligger på sin plats under theme/.
 
 Kämpa på.
 
