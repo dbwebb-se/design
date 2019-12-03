@@ -1,10 +1,12 @@
-Låt se hur kmom04 föll ut.
+Låt se hur kmom04, med färger, föll ut.
 
-Som vanligt kollar jag utskriften från din "dbwebb inspect". Jag vill se att allt validerar och att du utfört labben.
+Jag tittar på me/redovisa och temana för minimalistic, colorful och dark.
 
-Redovisningstexten läses igenom för att se hur du upplevde kursmomentet och för att se att texten "håller måttet".
+Jag läser igenom din artikel om färgval hos webbplatser.
 
-Sedan kollar jag runt på din me4 för att se att den motsvarar kraven i uppgiften.
+Redovisningstexten gås igenom för att se hur du upplever kmomet.
+
+Jag kikar på ditt repo på GitHub för att se att committs och taggar är på plats och att temafilerna ligger på sin plats under theme/.
 
 Bra jobbat så här långt. Detta kmom (kmom03/04) belönas med 2,5hp.
 
