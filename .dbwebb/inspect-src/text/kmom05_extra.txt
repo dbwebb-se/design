@@ -1,9 +1,1 @@
-FIX. Din jetty verkade inte fungera när man klickade på länkarna i tabellen, man förväntar sig att länken skall leda till en undersida som enbart visar en båt.
-
-FIX. Din jetty fungerar inte och det kan bero på https://dbwebb.se/forum/viewtopic.php?f=12&t=8783.
-
-FIX. Din multisida jetty finns inte synlig i din meny/navbar.
-
-FIX. Din search.php finns inte synlig i din meny/navbar.
-
-KOMMENTAR. I din sök så kunde man inte söka på delsträng via %a%, det borde ha funkat men vi släpper det.
+TIPS/FIX. Jag ser en skrollbar i sidled och det finns ett foruminlägg som visar hur du kan lösa det: https://dbwebb.se/t/8033.

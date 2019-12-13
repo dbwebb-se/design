@@ -1,3 +1,5 @@
 FIX. Länken till ditt GitHub-repo, i din om-sida, funkade inte, uppdatera den.
 
 FIX. Katalogen "theme/" saknas i ditt repo på GitHub. Lägg till den.
+
+TIPS/FIX. Jag ser en skrollbar i sidled och det finns ett foruminlägg som visar hur du kan lösa det: https://dbwebb.se/t/8033.

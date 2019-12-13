@@ -1,9 +1,13 @@
-Då tar vi kmom06, sedan är det bara projektet kvar.
+Då tar vi kmom06 med designelement och designprinciper, sedan är det bara projektet kvar.
 
-Jag kör en dbwebb inspect, läser igenom redovisningstexten och kollar att labben är utförd.
+Jag tittar på me/redovisa och dina två teman samt läser igenom de artiklar som hör till respektive tema.
 
-Jag tittar på CRUD i uppgiften admin.php och search.php. Jag vill se att din lösning uppfyller specen.
+Jag tittar igenom din rapport från undersökningen om webbplatsers designprinciper.
 
-Gott kämpat så här långt.
+Jag läser igenom din redovisningstext.
+
+Jag vill se taggar och commits i ditt GitHub repo.
+
+Kämpa på.
 
 $TEACHER_SIGNATURE

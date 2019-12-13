@@ -1,11 +1,13 @@
-Då tar kursen en liten ny vändning med kmom05 och databaser.
+Då tittar vi på kmom05 och bilder.
 
-Jag kör en "dbwebb inspect", läser igenom redovisningstexten så det ser okey ut och kollar så att labben är implementerad.
+Jag tittar på me/redovisa och din blogg med bilder.
 
-Jag tittar på din me-sida och ser om uppgiften jetty finns integrerad.
+Jag tittar igenom artikeln om laddningstider.
 
-Jag tittar på din me-sida och ser om uppgiften sök finns implementerad.
+Jag kollar på redovisningstexten för att se hur det gick för dig.
 
-Databaser blir det mer av i kmom06 så kör på.
+Jag vill se att taggar och commits finns på plats i ditt GitHub.
+
+Kämpa på.
 
 $TEACHER_SIGNATURE
