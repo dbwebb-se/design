@@ -8,6 +8,6 @@ Jag läser igenom din redovisningstext.
 
 Jag vill se taggar och commits i ditt GitHub repo.
 
-Kämpa på.
+Kämpa på. Förhoppningsvis kan du använda allt du gjort rakt in i projektet och kmom10.
 
 $TEACHER_SIGNATURE

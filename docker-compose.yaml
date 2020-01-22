@@ -57,6 +57,15 @@ services:
 
 
     # Anax images to test various PHP versions
+    php74:
+        image: anax/dev:php74
+        volumes: [ ".:/home/anax/repo" ]
+
+    php74-apache:
+        image: anax/dev:php74-apache
+        ports: [ "10074:80" ]
+        volumes: [ ".:/home/anax/repo" ]
+
     php73:
         image: anax/dev:php73
         volumes: [ ".:/home/anax/repo" ]

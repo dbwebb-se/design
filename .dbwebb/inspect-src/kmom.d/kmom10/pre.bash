@@ -12,3 +12,8 @@ printf ">>> -------------- Pre (all kmoms) ----------------------\n"
 # eval "$BROWSER" "$url" &
 # 
 # echo
+
+# Open me/kmom10/proj
+url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me/proj/htdocs"
+printf "$url\n" 2>&1
+eval "$BROWSER" "$url" &
