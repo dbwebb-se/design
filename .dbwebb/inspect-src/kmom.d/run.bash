@@ -23,7 +23,6 @@ MSG_OK="\033[0;30;42mOK\033[0m"
 MSG_DONE="\033[1;37;40mDONE\033[0m"
 #MSG_WARNING="\033[43mWARNING\033[0m"
 MSG_FAILED="\033[0;37;41mFAILED\033[0m"
-PROMPT=">>>"
 
 
 
@@ -31,7 +30,7 @@ PROMPT=">>>"
 # Print a header
 #
 function header {
-    printf "%s -------------- %-20s -------------------------\n" "$PROMPT" "$1"
+    printf "\033[32;01m>>> -------------- %-20s -------------------------\033[0m\n" "$1"
 }
 
 #
@@ -41,8 +40,9 @@ function text {
     printf "$@"
 }
 
+printf "\n"
 header "Start"
-text "%s Running all scripts in '%s'.\n" "$PROMPT" "$DIR/$KMOM"
+printf "Running scripts in '%s'.\n" "$DIR/$KMOM"
 
 summary=
 if ! compgen -G "$DIR/$KMOM/??*_*.bash" > /dev/null; then
